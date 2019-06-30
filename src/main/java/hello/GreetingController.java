@@ -13,5 +13,9 @@ public class GreetingController {
     public String greeting() {
         return "greeting";
     }
+    @PostMapping
+    public  String add(@RequestParam String fio, @RequestParam String group){
+        return "main";
+    }
 
 }
