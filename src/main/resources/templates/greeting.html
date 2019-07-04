@@ -1,167 +1,137 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Главная страница - страница обо мне</title>
-    <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="utf-8" />
-        <title>Название сайта</title>
-    </head>
-<body>
-<!--Создаём таблицу контейнер, которой задаём следующее
-оформление:
-border="1" - рамка вокруг контейнера. Увеличив число, можно увеличить толщину рамки.
-align="center" - размещаем контейнер по центру экрана.
-rules="rows" - убираем двойную рамку.
-style="width:60%;" - добавляем стилевое свойства, делающее
-контейнер и весь сайт "резиновым".
-Сделать полноценный адаптивный дизайн, этим способом невозможно.-->
-<table
-        border="1"
-        align="center"
-        rules="rows"
-        style="width:60%;">
-    <!--Создаём строку-->
-    <tr>
-        <!--Создаём ячейку строки-->
-        <td>
-            <!--ШАПКА САЙТА-->
+    <meta charset="UTF-8">
+    <title>Track Progress</title>
+    <style>
+        {box-sizing: border-box;}
+        body {background: #f69a73;}
+        .decor {
+            position: relative;
+            max-width: 400px;
+            margin: 50px auto 0;
+            background: white;
+            border-radius: 30px;
+        }
+        .form-left-decoration,
+        .form-right-decoration {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            background: #f69a73;
+            border-radius: 20px;
+        }
+        .form-left-decoration {
+            bottom: 60px;
+            left: -30px;
+        }
+        .form-right-decoration {
+            top: 60px;
+            right: -30px;
+        }
+        .form-left-decoration:before,
+        .form-left-decoration:after,
+        .form-right-decoration:before,
+        .form-right-decoration:after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            border-radius: 30px;
+            background: white;
+        }
+        .form-left-decoration:before {top: -20px;}
+        .form-left-decoration:after {
+            top: 20px;
+            left: 10px;
+        }
+        .form-right-decoration:before {
+            top: -20px;
+            right: 0;
+        }
+        .form-right-decoration:after {
+            top: 20px;
+            right: 10px;
+        }
+        .circle {
+            position: absolute;
+            bottom: 80px;
+            left: -55px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+        }
+        .form-inner {padding: 40pt;}
+        .form-inner input,
+        .form-inner textarea {
+            display: block;
+            width: 90%;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            background: #E9EFF6;
+            line-height: 40px;
+            border-width: 0;
+            border-radius: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-inner input[type="submit"] {
+            margin-top: 30px;
+            background: #f69a73;
+            border-bottom: 4px solid #d87d56;
+            color: white;
+            font-size: 14px;
+        }
+        .form-inner textarea {resize: none;}
+        .form-inner h3 {
+            margin-top: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            color: #ab8058;
+        }
+    </style>
+</head>
+<body background="https://html5book.ru/wp-content/uploads/2015/07/background39.png">
 
-            <!--В ячейке строки создаём ещё одну таблицу для шапки сайта.
-            Оформление:
-            border="1" - двойная рамка толщиной в 1px
-            background="images/168.png" - картинка в шапке сайта, если требуется.
-            Адрес картинки вы должны вставить свой.
-            bgcolor="#7FFFD4" - фоновый цвет в шапке, если нет картинки.
-            cellpadding="10" - отступ содержимого от рамки не менее 10px.
-            style="width:100%; border-radius:5px;" - добавляем "резиновость"
-            и закругляем уголки рамки-->
-            <table
-                    border="1"
-                    background="images/168.png"
-                    bgcolor="#7FFFD4"
-                    cellpadding="10"
-                    style="width:100%; border-radius:5px;">
-                <!--Создаём строку таблицы-->
-                <tr>
-                    <!--Создаём столбец таблицы-->
-                    <th>
-                        <!--Содержание ячейки столбца-->
-                        <h1>Название сайта (организации)</h1>
-                        <h3>Описание сайта</h3>
-                        <!--Закрываем таблицу-->
-                    </th>
-                </tr>
-            </table>
+<h1 align="center">Web-приложение "Track Progress"</h1>
+<h4 align="right">Данное приложение ведет учет занятий на курсах по Java</h4>
 
-            <!--ОСНОВНОЙ КОНТЕНТ-->
+<form class="decor" method="post" action="filter?fio1=fio&group1=group2">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h3>Таблица "Студенты"</h3>
 
-            <!--В этой же ячейке контейнера создаём ещё одну таблицу
-            для основного контента.
-            Оформление как и в предыдущей таблице-->
+        <input type="fio1" name="fio" placeholder="Введите ФИО студента">
+        <input type="group1" name = "group2" placeholder="Введите группу студента">
+        <input type="submit" value="Добавить">
+    </div>
+</form>
+<!--
+<form class="decor", method="post" action="/messages">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h3>список сообщений</h3>
+        <input type="group" placeholder="Группа">
+        <input type="submit" value="Найти">
+    </div>
+</form>
 
-            <table
-                    border="1"
-                    bgcolor="#e6e6fa"
-                    cellpadding="10"
-                    style="width:100%; border-radius:5px;">
-                <!--Создаём строку-->
-                <tr>
-                    <!--Создаём ячейку
-                    Оформление:
-                    rowspan="2" - объединяем две ячейки в одну.
-                    Число объединяемых ячеек по числу ячеек в сайдбаре.
-                    style="width:80%" - основной контент занимает 80% всей площади,
-                    оставшиеся 20% для сайдбара-->
-                    <td
-                            rowspan="2"
-                            style="width:80%">
-                        <h2>Главная</h2>
-                        <!--Начинаем абзац с красной строки-->
-                        <p style="text-indent:20px">
-                            Здравствуйте уважаемые будущие веб-мастера!
-                            Мне 55 лет и я рад приветствовать Вас на своём сайте.
-                            Этот сайт первый, который я разработал самостоятельно,
-                            а до этого умел только входить в интернет.</p>
 
-                        <p style="text-indent:20px">Почему я решил его сделать?
-                            За те 3 месяца, пока разбирался в
-                            сайтостроении и создавал этот ресурс обнаружилось,
-                            что авторы руководств по созданию
-                            сайтов считают многие нюансы само собой разумеющимися
-                            и не обращают на них внимание
-                            А мне, учитывая возраст и «опыт», было не просто
-                            понять как раз эти нюансы, они отнимали больше всего
-                            времени.</p>
-                        <!--Закрываем ячейку-->
-                    </td>
+<div>список сообщений</div>
+<form method="post" action="filter">
+        <input type="fio"  name = "fio" placeholder="ФИО">
+        <input type="group"  name = "group" placeholder="Группа">
+    <button type ="submit"> Добавить </button>
 
-                    <!--САЙДБАР-->
+</form>
 
-                    <!--Создаём ячейку сайдбара-->
-                    <td bgcolor="#e6e6fa">
-                        <h3>Меню</h3>
-                        <!--Абзац для ссылки на страницу сайта-->
-                        <p>
-                            <!--Ссылка на страницу сайта-->
-                            <a href="">
-                                <!--Картинка маркера перед названием страницы-->
-                                <img src="http://trueimages.ru/img/00/06/f4fffdb5.png">
-                                <!--Название страницы
-                                style="margin-left:5px;" - отступ названия от маркера-->
-                                <span style="margin-left:5px;">Главная</span></a>
-                            <!--Закрываем абзац-->
-                        </p>
-                        <p>
-                            <a href="">
-                                <img src="http://trueimages.ru/img/31/ab/4dcb087c2ae4305edcd15171696.jpg">
-                                <span style="margin-left:5px;">Cтраница 1</span;></a>
-                        </p>
-                        <p>
-                            <a href="">
-                                <img src="http://trueimages.ru/img/31/ab/4dcb087c2ae4305edcd15171696.jpg">
-                                <span style="margin-left:5px;">Страница 2</span></a>
-                        </p>
-                        <!--Закрываем строку Меню-->
-                    </td>
-                </tr>
-                <!--Создаём строку с дополнительной информацией-->
-                <tr>
-                    <!--Ячейка с дополнительной информацией-->
-                    <td
-                            bgcolor="#e6e6fa"
-                            align="center">
-                        <h3>Общая информация</h3>
-                        <p>Текст общей информации</p>
-                        <!--Закрываем ячейку с общей информацией
-                        и таблицу основного контента-->
-                    </td>
-                </tr>
-            </table>
+-->
 
-            <!--ПОДВАЛ-->
-
-            <!--Создаём таблицу подвала-->
-            <table
-                    border="1"
-                    bgcolor="#7FFFD4"
-                    height="100"
-                    cellpadding="10"
-                    style="width:100%; border-radius:5px;">
-                <!--Создаём строку.-->
-                <tr>
-                    <!--Создаём столбец-->
-                    <th>
-                        <h3>Подвал</h3>
-                        <!--Закрываем таблицу подвала. При желании в подвале можно
-                        сделать несколько строк и столбцов-->
-                    </th>
-                </tr>
-            </table>
-            <!--Закрываем таблицу контейнера-->
-        </td>
-    </tr>
-</table>
 </body>
 </html>
