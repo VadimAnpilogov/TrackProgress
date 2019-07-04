@@ -98,19 +98,40 @@
 <h1 align="center">Web-приложение "Track Progress"</h1>
 <h4 align="right">Данное приложение ведет учет занятий на курсах по Java</h4>
 
-<form class="decor">
+<form class="decor" method="post" action="filter?fio1=fio&group1=group2">
     <div class="form-left-decoration"></div>
     <div class="form-right-decoration"></div>
     <div class="circle"></div>
     <div class="form-inner">
         <h3>Таблица "Студенты"</h3>
-        <input type="fio" placeholder="Введите ФИО студента">
-        <input type="group" placeholder="Введите группу">
-        <input type="submit" value="Отправить">
+
+        <input type="fio1" name="fio" placeholder="Введите ФИО студента">
+        <input type="group1" name = "group2" placeholder="Введите группу студента">
+        <input type="submit" value="Добавить">
+    </div>
+</form>
+<!--
+<form class="decor", method="post" action="/messages">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+        <h3>список сообщений</h3>
+        <input type="group" placeholder="Группа">
+        <input type="submit" value="Найти">
     </div>
 </form>
 
 
+<div>список сообщений</div>
+<form method="post" action="filter">
+        <input type="fio"  name = "fio" placeholder="ФИО">
+        <input type="group"  name = "group" placeholder="Группа">
+    <button type ="submit"> Добавить </button>
+
+</form>
+
+-->
 
 </body>
 </html>

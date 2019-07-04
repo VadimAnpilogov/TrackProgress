@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'io.spring.dependency-management'
-mainClassName = "Main"
+mainClassName = "Application"
 sourceCompatibility = 1.5
 version = '1.0'
 buildscript {
@@ -26,11 +26,18 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 dependencies {
+    compile group: 'org.springframework.data', name: 'spring-data-commons', version: '2.1.9.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.6.RELEASE'
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+   
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.6.RELEASE'
+    compile group: 'com.github.spullara.mustache.java', name: 'compiler', version: '0.8.9'
+    compile 'mysql:mysql-connector-java'
     compile("org.springframework.boot:spring-boot-devtools")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
