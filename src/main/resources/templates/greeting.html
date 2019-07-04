@@ -4,92 +4,35 @@
     <meta charset="UTF-8">
     <title>Track Progress</title>
     <style>
-        {box-sizing: border-box;}
-        body {background: #f69a73;}
-        .decor {
-            position: relative;
-            max-width: 400px;
-            margin: 50px auto 0;
-            background: white;
-            border-radius: 30px;
-        }
-        .form-left-decoration,
-        .form-right-decoration {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 20px;
-            background: #f69a73;
-            border-radius: 20px;
-        }
-        .form-left-decoration {
-            bottom: 60px;
-            left: -30px;
-        }
-        .form-right-decoration {
-            top: 60px;
-            right: -30px;
-        }
-        .form-left-decoration:before,
-        .form-left-decoration:after,
-        .form-right-decoration:before,
-        .form-right-decoration:after {
-            content: "";
-            position: absolute;
-            width: 50px;
-            height: 20px;
-            border-radius: 30px;
-            background: white;
-        }
-        .form-left-decoration:before {top: -20px;}
-        .form-left-decoration:after {
-            top: 20px;
-            left: 10px;
-        }
-        .form-right-decoration:before {
-            top: -20px;
-            right: 0;
-        }
-        .form-right-decoration:after {
-            top: 20px;
-            right: 10px;
-        }
-        .circle {
-            position: absolute;
-            bottom: 80px;
-            left: -55px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: white;
-        }
-        .form-inner {padding: 40pt;}
+        .form-inner {padding: 20pt;}
         .form-inner input,
         .form-inner textarea {
-            display: block;
-            width: 90%;
+            display: table-cell;
+            width: 100%;
             padding: 0 20px;
             margin-bottom: 10px;
-            background: #E9EFF6;
+            background: rgba(255, 213, 140, 0.8);
             line-height: 40px;
             border-width: 0;
             border-radius: 20px;
             font-family: 'Roboto', sans-serif;
         }
-        .form-inner input[type="submit"] {
-            margin-top: 30px;
-            background: #f69a73;
-            border-bottom: 4px solid #d87d56;
-            color: white;
-            font-size: 14px;
-        }
-        .form-inner textarea {resize: none;}
-        .form-inner h3 {
-            margin-top: 0;
+        .form-inner output {
+            display: table-cell;
+            width: 100%;
+            padding: 100px 200px;
+            margin-bottom: 10px;
+            background: rgba(255, 213, 140, 0.8);
+            color: #9e9e9e;
+            line-height: 50px;
+            border-width: 0;
+            border-radius: 20px;
             font-family: 'Roboto', sans-serif;
-            font-weight: 600;
-            font-size: 24px;
-            color: #ab8058;
+        }
+        .form-inner input[type="submit"] {
+            background: #ffd291;
+            color: #ab431b;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -97,41 +40,22 @@
 
 <h1 align="center">Web-приложение "Track Progress"</h1>
 <h4 align="right">Данное приложение ведет учет занятий на курсах по Java</h4>
-
+<hr>
 <form class="decor" method="post" action="filter?fio1=fio&group1=group2">
-    <div class="form-left-decoration"></div>
-    <div class="form-right-decoration"></div>
-    <div class="circle"></div>
-    <div class="form-inner">
-        <h3>Таблица "Студенты"</h3>
-
-        <input type="fio1" name="fio" placeholder="Введите ФИО студента">
-        <input type="group1" name = "group2" placeholder="Введите группу студента">
-        <input type="submit" value="Добавить">
-    </div>
+    <table>
+        <tr>
+            <th><header><h2> Таблица "Студенты" </h2></header></th>
+        </tr>
+        <tr>
+            <td><div class="form-inner"><input type="fio1" name="fio" placeholder="Введите ФИО студента"></div></td>
+            <td><div class="form-inner"><input type="group1" name = "group2" placeholder="Введите группу"></div></td>
+            <td><div class="form-inner"><input type="submit" value="Отправить"></div></td>
+        </tr>
+        <tr>
+            <td  colspan="3"><div class="form-inner"><output name="result">Здесь появятся данные из таблицы</output></div></td>
+        </tr>
+    </table>
 </form>
-<!--
-<form class="decor", method="post" action="/messages">
-    <div class="form-left-decoration"></div>
-    <div class="form-right-decoration"></div>
-    <div class="circle"></div>
-    <div class="form-inner">
-        <h3>список сообщений</h3>
-        <input type="group" placeholder="Группа">
-        <input type="submit" value="Найти">
-    </div>
-</form>
-
-
-<div>список сообщений</div>
-<form method="post" action="filter">
-        <input type="fio"  name = "fio" placeholder="ФИО">
-        <input type="group"  name = "group" placeholder="Группа">
-    <button type ="submit"> Добавить </button>
-
-</form>
-
--->
 
 </body>
 </html>
