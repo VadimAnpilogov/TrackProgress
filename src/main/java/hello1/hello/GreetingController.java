@@ -15,17 +15,16 @@ public class GreetingController {
     public MessageRepo messageRepo;
 
 //    @GetMapping
-//    public String greeting() {
-//        return "greeting";
+//    public String home() {
+//        return "home";
 //    }
     @GetMapping
-  //@RequestMapping(value = "/greeting", method = RequestMethod.GET)
     public String main(Map<String, Object> model)
     {
         Iterable<message> messages = messageRepo.findAll();
 
         model.put("messages", messages);
-        return "greeting";
+        return "home";
     }
 
     @PostMapping("filter")
@@ -36,7 +35,7 @@ public class GreetingController {
         Iterable<message> messages = messageRepo.findAll();
 
         model.put("messages", messages);
-        return "greeting";
+        return "home";
     }
 
 

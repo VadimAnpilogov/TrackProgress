@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:height="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Track Progress</title>
@@ -11,7 +11,8 @@
             width: 100%;
             padding: 0 20px;
             margin-bottom: 10px;
-            background: rgba(255, 213, 140, 0.8);
+            background: rgb(0, 179, 236);
+            color: #e9eff6;
             line-height: 40px;
             border-width: 0;
             border-radius: 20px;
@@ -19,32 +20,34 @@
         }
         .form-inner output {
             display: table-cell;
-            width: 100%;
             padding: 100px 200px;
             margin-bottom: 10px;
-            background: rgba(255, 213, 140, 0.8);
-            color: #9e9e9e;
-            line-height: 50px;
+            background: rgba(0, 173, 238, 0.8);
+            color: #e9eff6;
+            line-height: 60px;
+            width: 200pt;
             border-width: 0;
             border-radius: 20px;
             font-family: 'Roboto', sans-serif;
         }
         .form-inner input[type="submit"] {
-            background: #ffd291;
-            color: #ab431b;
+            background: rgb(0, 48, 142);
+            color: rgb(233, 239, 246);
             font-size: 14px;
         }
+        .head16{
+            font: 16pt sans-serif;
+        }
     </style>
+
 </head>
 <body background="https://html5book.ru/wp-content/uploads/2015/07/background39.png">
 
-<h1 align="center">Web-приложение "Track Progress"</h1>
-<h4 align="right">Данное приложение ведет учет занятий на курсах по Java</h4>
-<hr>
+
 <form class="decor" method="post" action="filter?fio1=fio&group1=group2">
-    <table>
+    <table align="center">
         <tr>
-            <th><header><h2> Таблица "Студенты" </h2></header></th>
+            <th><header><h2 class="head16"> Таблица "Студенты" </h2></header></th>
         </tr>
         <tr>
             <td><div class="form-inner"><input type="fio1" name="fio" placeholder="Введите ФИО студента"></div></td>
@@ -52,7 +55,7 @@
             <td><div class="form-inner"><input type="submit" value="Отправить"></div></td>
         </tr>
         <tr>
-            <td  colspan="3"><div class="form-inner"><output name="result">Здесь появятся данные из таблицы</output></div></td>
+            <td  colspan="3"><div align="center" class="form-inner"><output name="result">Здесь появятся данные</output></div></td>
         </tr>
     </table>
 </form>
