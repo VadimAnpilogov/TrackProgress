@@ -27,6 +27,11 @@ public class GreetingController {
         return "home";
     }
 
+    @GetMapping("groups")
+    public String groups () {
+        return "groups";
+    }
+
     @PostMapping("filter")
     public String add(@RequestParam String fio, @RequestParam String group2,Map<String, Object> model)
     {
@@ -37,6 +42,5 @@ public class GreetingController {
         model.put("messages", messages);
         return "home";
     }
-
 
 }
