@@ -12,23 +12,17 @@ public class message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String fio;
-    private String group2;
+    private String groups;
     public message()
     {
 
     }
 
-    public message(String fio, String group2) {
 
-       // this.id = id;
+    public message(String fio, String groups) {
         this.fio = fio;
-        this.group2 = group2;
+        this.groups = groups;
     }
-
-//    public message(String fio, String group) {
-//        this.fio = fio;
-//        this.group = group;
-//    }
 
     public Integer getId() {
         return id;
@@ -46,11 +40,11 @@ public class message {
         this.fio = fio;
     }
 
-    public String getGroup2() {
-        return group2;
+    public String getGroups() {
+        return groups;
     }
 
-    public void setGroup2(String group2) {
-        this.group2 = group2;
+    public void setGroups(String groups) {
+        this.groups = groups;
     }
 }

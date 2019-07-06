@@ -14,10 +14,6 @@ public class GreetingController {
     @Autowired
     public MessageRepo messageRepo;
 
-//    @GetMapping
-//    public String home() {
-//        return "home";
-//    }
     @GetMapping
     public String main(Map<String, Object> model)
     {
@@ -32,15 +28,15 @@ public class GreetingController {
         return "groups";
     }
 
-    @PostMapping("filter")
-    public String add(@RequestParam String fio, @RequestParam String group2,Map<String, Object> model)
+    @PostMapping("addStudents")
+    public String add(@RequestParam String fio, @RequestParam String groups,Map<String, Object> model)
     {
-        message message = new message(fio,group2);
+        message message = new message(fio,groups);
         messageRepo.save(message);
         Iterable<message> messages = messageRepo.findAll();
 
         model.put("messages", messages);
-        return "home";
+        return "groups";
     }
 
 }

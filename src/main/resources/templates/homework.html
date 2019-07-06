@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-
 <head>
     <meta charset="UTF-8">
     <title>Track Progress</title>
@@ -124,30 +123,26 @@
         <li class="right-item"><a href="theme">Темы</a></li>
         <li class="right-item"><a href="homework">Домашнее задание</a></li>
     </ul>
+<!--    <a class="navbar-logo" href=""><img height="70pt" src="https://psv4.userapi.com/c848336/u149565255/docs/d12/52f0762e10e7/Logotip_proekta.png?extra=Lx3sMb5uICYltg3MbULpkeQlRJJKosaBcpVgXVw7pxLcthagulnCJJ2sNDx856HnJXNar6o4QixvmnLPns72jZnEkuI3VErP0gER35_o11d_PWvaMJzSbiDXwm4I7XWjmX9LtFPYQhV6qSyf4gLGkOuqzg"></a>-->
+    <!--    <a class="navbar-logo" href=""><img height="70pt" src="https://psv4.userapi.com/c848332/u197279817/docs/d8/cc484cd8a760/logotip.png?extra=aJdCXDsR-wxXyUi1uD9LaSEw3JqkPW-p0w5izZa__eRHWo8Okf9UJUNvGMLCle6J0qpAukl8F7KVMCDPUvegiGkMRFj5HOVmUGu3AEoacrwlUP-cm9LUQ2qPNZsPWX_WZJ_-VGhkOh8zooCbH-wb28ktBg"></a>-->
 </nav>
 <hr>
 <!--Меню-->
 
-<!--Содержимое-->
-
-<form class="decor" method="post" action="addStudents?fio1=fio&group1=groups">
-    <table align="right">
+<form class="decor" method="post" action="filter?fio1=fio&group1=groups">
+    <table align="center">
         <tr>
-            <th><header><h2 class="head16"> Таблица "Студенты" </h2></header></th>
+            <th><header><h2 class="head16"> Таблица "Домашнее задание" </h2></header></th>
         </tr>
         <tr>
             <td><div class="form-inner"><input type="fio1" name="fio" placeholder="Введите ФИО студента"></div></td>
             <td><div class="form-inner"><input type="group1" name = "groups" placeholder="Введите группу"></div></td>
             <td><div class="form-inner"><input type="submit" value="Отправить"></div></td>
-
         </tr>
-        <!--        <tr>-->
-        <!--            <td  colspan="3"><div align="center" class="form-inner"><output name="result">Здесь появятся данные</output></div></td>-->
-
-        <!--        </tr>-->
+        <tr>
+            <td  colspan="3"><div align="center" class="form-inner"><output name="result">Здесь появятся данные</output></div></td>
+        </tr>
     </table>
-    <div>Данные о всех студентах, которые посещают курс</div>
-
 </form>
 
 </body>
