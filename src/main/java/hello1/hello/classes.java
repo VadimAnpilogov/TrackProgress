@@ -1,26 +1,20 @@
 package hello1.hello;
 
-
-import org.springframework.context.annotation.Bean;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "students")
-public class message {
+@Table(name = "classes")
+public class classes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String fio;
+    private String date;
     private String groups;
-    public message()
-    {
 
-    }
+    public classes() {}
 
-
-    public message(String fio, String groups) {
-        this.fio = fio;
+    public classes(String date, String groups) {
+        this.date = date;
         this.groups = groups;
     }
 
@@ -32,12 +26,12 @@ public class message {
         this.id = id;
     }
 
-    public String getFio() {
-        return fio;
+    public String getDate() {
+        return date;
     }
 
-    public void setFio(String fio) {
-        this.fio = fio;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getGroups() {
