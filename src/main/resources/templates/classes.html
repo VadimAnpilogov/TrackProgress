@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:height="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Track Progress</title>
@@ -144,6 +145,13 @@
         </tr>
     </table>
 </form>
+
+<tr th:each="person : ${classes}">
+    <td th:utext="${person.id}"></td>
+    <td th:utext="${person.date}"></td>
+    <td th:utext="${person.groups}"></td>
+    <br>
+</tr>
 
 </body>
 </html>

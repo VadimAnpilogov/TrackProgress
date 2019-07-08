@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Map;
+
 @Controller
 public class ClassesController {
 
@@ -13,16 +15,20 @@ public class ClassesController {
     public ClassesRepository classesRepository;
 
     @GetMapping("classes")
-    public String classes () {
+    public String classes (Map<String, Object> model) {
+        Iterable<classes> classes1 = classesRepository.findAll();
+        model.put("classes", classes1);
         return "classes";
     }
 
     @PostMapping("addClasses")
-    public String addClasses(@RequestParam String date, @RequestParam String groups)
+    public String addClasses(@RequestParam String date, @RequestParam String groups, Map<String, Object> model)
     {
         classes classes = new classes(date, groups);
         classesRepository.save(classes);
 
+        Iterable<classes> classes1 = classesRepository.findAll();
+        model.put("classes", classes1);
         return "classes";
     }
 

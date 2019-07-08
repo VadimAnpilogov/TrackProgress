@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:height="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Track Progress</title>
@@ -129,13 +130,13 @@
 <hr>
 <!--Меню-->
 
-<form class="decor" method="post" action="addTheme?theme1=theme">
+<form class="decor" method="post" action="addTheme?descriptionTheme1=descriptionTheme">
     <table align="center">
         <tr>
             <th><header><h2 class="head16"> Таблица "Темы" </h2></header></th>
         </tr>
         <tr>
-            <td><div class="form-inner"><input type="theme1" name="theme" placeholder="Введите название темы"></div></td>
+            <td><div class="form-inner"><input type="descriptionTheme1" name="descriptionTheme" placeholder="Введите название темы"></div></td>
             <td><div class="form-inner"><input type="submit" value="Отправить"></div></td>
         </tr>
         <tr>
@@ -143,6 +144,10 @@
         </tr>
     </table>
 </form>
-
+<tr th:each="person : ${theme}">
+    <td th:utext="${person.id}"></td>
+    <td th:utext="${person.descriptionTheme}"></td>
+    <br>
+</tr>
 </body>
 </html>
