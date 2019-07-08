@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'io.spring.dependency-management'
-mainClassName = "hello1.hello/Application"
+mainClassName = "track.progress/Application"
 sourceCompatibility = 1.5
 version = '1.0'
 buildscript {

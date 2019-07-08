@@ -1,9 +1,8 @@
-package hello1.hello;
+package track.progress.Repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
+import track.progress.Entity.message;
 
 
 @Repository

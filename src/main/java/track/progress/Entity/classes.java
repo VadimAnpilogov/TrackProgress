@@ -1,4 +1,4 @@
-package hello1.hello;
+package track.progress.Entity;
 
 import javax.persistence.*;
 
