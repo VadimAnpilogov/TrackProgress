@@ -2,8 +2,18 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <style th:fragment="style">
+    html{
+        background-image: url("https://psv4.userapi.com/c848420/u149565255/docs/d16/dba4efc852b7/blue-mountain.jpg?extra=06FftbE7cW-E0UCBxK5yb1xuvYcWvycQYINe88Pe1pHqalbYvEtv6WqQdK35xaaV2bmKk1k_cvIfv0Rq472rnTzmMYlci2SLM8PEClvNiN-TwvpcEJtRqWY3HbiulkHnAJ-hHT-0M2DVlz-odBfQ7mG9qA");
+        background-size: 100%;
+        background-attachment: scroll;
+        background-color: #3980b6;
+        background-repeat: no-repeat;
+    }
     .head20{
         font: 20pt sans-serif;
+    }
+    .head16{
+        font: 16pt sans-serif;
     }
     .head12{
         font: 12pt sans-serif;
@@ -85,6 +95,111 @@
         border-radius: 50px;
         font-family: sans-serif;
         color: white;
+    }
+    .table{
+        /*padding: auto;*/
+        /*margin-bottom: 10px;*/
+        background: rgb(37, 37, 37);
+        /*background: rgba(0, 173, 238, 0.8);*/
+        color: #ffffff;
+        /*line-height: 20px;*/
+        /*width: 600pt;*/
+        border-width: 3pt;
+        border-radius: 3px;
+        font-family: sans-serif;
+        font-size: 15pt;
+        /*box-shadow: 0 5pt 15px #225bff;*/
+    }
+    .form-inner {padding: 20pt;}
+    .form-inner input,
+    .form-inner textarea {
+        display: table-cell;
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        background: rgb(0, 179, 236);
+        color: #e9eff6;
+        line-height: 40px;
+        border-width: 0;
+        border-radius: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .form-inner output {
+        display: table-cell;
+        padding: 100px 200px;
+        margin-bottom: 10px;
+        background: rgba(0, 173, 238, 0.8);
+        color: #e9eff6;
+        line-height: 60px;
+        width: 200pt;
+        border-width: 0;
+        border-radius: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .form-inner input[type="submit"] {
+        background: rgba(0, 94, 210, 0.91);
+        color: rgb(233, 239, 246);
+        font-size: 14px;
+    }
+    .input{
+        padding: 0 20px;
+        margin-bottom: 10px;
+        background: rgb(236, 236, 236);
+        color: #2a2a2a;
+        line-height: 30px;
+        border-width: 0;
+        border-radius: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .headers{
+        background: rgb(233, 233, 233);
+        color: #f8f8ff;
+        font-family: 'Roboto', sans-serif;
+
+    }
+    table.horizontal-align th {
+        text-align: center;
+    }
+
+    thead th {
+        background-color: rgba(215, 215, 215, 0.71);
+    }
+
+    tbody td {
+        background-color: rgba(241, 241, 241, 0.7);
+    }
+
+    /*таблица*/
+
+    table.horizontal-align th {
+        text-align: center;
+    }
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+        color: #fcffff;
+        background-color: #2b6394;
+    }
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #fcffff;
+        background-color: #2b6394;
+    }
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #fcffff;
+        background-color: #2b6394;
+    }
+    max-width: 767px {
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+            color: #fcffff;
+            background-color: #2b6394;
+        }
     }
 </style>
 </html>
