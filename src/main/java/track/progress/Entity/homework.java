@@ -45,9 +45,10 @@ public class homework {
         this.date = date;
     }
 
-    public homework(String description, String groups, String date) {
+    public homework(String date, String description, String groups) {
+        this.date = date;
         this.description = description;
         this.groups = groups;
-        this.date = date;
+
     }
 }

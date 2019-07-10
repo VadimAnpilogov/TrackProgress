@@ -5,34 +5,45 @@
     <meta charset="UTF-8">
     <title>Track Progress</title>
     <style th:replace="style :: style"></style>
-
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body th:replace="menu :: menu"></body>
 <body>
 
-<form class="decor" method="post" action="addHomework?description1=description&groups1=groups&date1=date">
+<form class="decor" method="post" action="addHomework?date1=date&description1=description&groups1=groups">
     <table align="center">
+
+        <thead>
         <tr>
-            <th><header><h2 class="head16"> Таблица "Домашнее задание" </h2></header></th>
+            <th style="width: 5%">#</th>
+            <th style="width: 20%">Дата</th>
+            <th style="width: 50%">Описание ДЗ</th>
+            <th style="width: 20%">Группа</th>
+            <th style="width: 15%">Edit</th>
+            <th style="width: 15%">Delete</th>
         </tr>
+        </thead>
         <tr>
-            <td><div class="form-inner"><input type="description1" name="description" placeholder="Введите описание ДЗ"></div></td>
-            <td><div class="form-inner"><input type="groups1" name = "groups" placeholder="Введите группу"></div></td>
-            <td><div class="form-inner"><input type="date1" name = "date" placeholder="Введите дату"></div></td>
-            <td><div class="form-inner"><input type="submit" value="Отправить"></div></td>
+            <td></td>
+            <td><input type="date1" name = "date" placeholder="Введите дату"></td>
+            <td><input type="description1" name="description" placeholder="Введите описание ДЗ"></td>
+            <td><input type="groups1" name = "groups" placeholder="Введите группу"></td>
+            <td><input type="submit" value="Отправить"></div></td>
         </tr>
-        <tr>
-            <td  colspan="3"><div align="center" class="form-inner"><output name="result">Здесь появятся данные</output></div></td>
+
+        <tr th:each="person : ${homework}">
+            <td th:utext="${person.id}"></td>
+            <td th:utext="${person.date}"></td>
+            <td th:utext="${person.description}"></td>
+            <td th:utext="${person.groups}"></td>
+            <td></td>
+            <td style="text-align: center"><a th:href="@{'/deleteH/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>
     </table>
 </form>
 
-<tr th:each="person : ${homework}">
-    <td th:utext="${person.id}"></td>
-    <td th:utext="${person.date}"></td>
-    <td th:utext="${person.description}"></td>
-    <td th:utext="${person.groups}"></td>
-    <br>
-</tr>
+
 </body>
 </html>
