@@ -54,11 +54,4 @@ public class ClassesController {
     }
 
 
-    @GetMapping("/sort")
-    public String sortClasses(@RequestParam int id) {
-        classesRepository.findAllByOrderByDateAsc();
-
-        return "redirect:/classes";
-    }
-
 }

@@ -7,7 +7,6 @@ import track.progress.Entity.message;
 
 @Repository
 public interface MessageRepo extends CrudRepository <message, Integer> {
-    //List<message> findAllByOrderByDateAsc();
-   // List<message> findAllByOrderByDateDesc();
+
 
 }
