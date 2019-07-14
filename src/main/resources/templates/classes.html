@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Track Progress</title>
-    <style th:replace="style :: style"></style>
-    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" media="screen" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
+<head th:replace="head :: head"></head>
 <body th:replace="menu :: menu"></body>
 <body>
 
@@ -25,7 +18,7 @@
         </thead>
         <tr>
             <td></td>
-            <td><input type="date1" name="date" placeholder="Введите дату занятия"></td>
+            <td><input type="date1" name="date" id="datepicker" autocomplete="off" placeholder="Введите дату занятия"></td>
             <td><input type="group1" name = "groups" placeholder="Введите группу"></td>
             <td><input type="submit" value="Добавить"></td>
             <td></td>
@@ -41,7 +34,7 @@
 
     </table>
 </form>
-
+<footer th:replace="footer :: footer"></footer>
 
 </body>
 </html>

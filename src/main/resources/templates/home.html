@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Track Progress</title>
-    <style th:replace="style :: style"></style>
-    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-</head>
+<head th:replace="head :: head"></head>
 <body th:replace="menu :: menu"></body>
 <body>
 <script th:replace="time :: time"></script>
 <div id="timedisplay" class="time" align="center"></div>
+
+<footer th:replace="footer :: footer"></footer>
 </body>
 
 </html>
