@@ -1,25 +1,24 @@
 package track.progress.service;
 
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import track.progress.Repository.ClassesRepository;
-
-
+import track.progress.Repository.GroupRepository;
 
 @Service
-public class ClassesService implements ClassesServices{
+public class GroupsLService implements GroupsLServices {
 
-    private ClassesRepository repository;
+    private GroupRepository repository;
 
     @Autowired
-    public void setProductRepository(ClassesRepository repository) {
+    public void setProductRepository(GroupRepository repository) {
         this.repository = repository;
     }
 
+
+
     @Override
-    public void deleteC(Integer id) {
+    public void deleteGL(Integer id) {
         repository.deleteById(id);
     }
 

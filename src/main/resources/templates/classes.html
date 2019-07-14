@@ -10,11 +10,10 @@
     <table align="center">
         <thead>
         <tr>
-            <th style="width: 5%">#</th>
-            <th style="width: 20%">Date</th>
-            <th style="width: 20%">Group</th>
-            <th style="width: 15%">Edit</th>
-            <th style="width: 15%">Delete</th>
+            <th style="width: 35px">#</th>
+            <th style="width: 80px">Date</th>
+            <th style="width: 80px">Group</th>
+            <th style="width: 35px">Delete</th>
         </tr>
         </thead>
         <tr>
@@ -22,14 +21,12 @@
             <td><input type="date1" name="date" id="datepicker" autocomplete="off" placeholder="Введите дату занятия"></td>
             <td><input type="group1" name = "groups" placeholder="Введите группу"></td>
             <td><input type="submit" value="Добавить"></td>
-            <td></td>
         </tr>
 
         <tr th:each="person : ${classes}">
-            <td th:utext="${person.id}"></td>
+            <td style="text-align: center" th:utext="${person.id}"></td>
             <td th:utext="${person.date}"></td>
             <td th:utext="${person.groups}"></td>
-            <td></td>
             <td style="text-align: center"><a th:href="@{'/deleteC/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>
 

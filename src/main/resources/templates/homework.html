@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
+
 <head th:replace="head :: head"></head>
 <body th:replace="menu :: menu"></body>
 <body>
@@ -11,28 +11,26 @@
 
         <thead>
         <tr>
-            <th style="width: 5%">#</th>
-            <th style="width: 5%">Дата</th>
-            <th style="width: 30%">Описание ДЗ</th>
-            <th style="width: 5%">Группа</th>
-            <th style="width: 5%">Edit</th>
-            <th style="width: 3%">Delete</th>
+            <th style="width: 35px">#</th>
+            <th style="width: 80px">Дата</th>
+            <th style="width: 300px">Описание ДЗ</th>
+            <th style="width: 80px">Группа</th>
+            <th style="width: 35px">Delete</th>
         </tr>
         </thead>
         <tr>
             <td></td>
             <td><input type="date1" name = "date" id="datepicker" autocomplete="off" placeholder="Введите дату"></td>
-            <td><input type="description1" name="description" placeholder="Введите описание ДЗ"></td>
+            <td><input style="width: 300px" type="description1" name="description" placeholder="Введите описание ДЗ"></td>
             <td><input type="groups1" name = "groups" placeholder="Введите группу"></td>
             <td><input type="submit" value="Отправить"></div></td>
         </tr>
 
         <tr th:each="person : ${homework}">
-            <td th:utext="${person.id}"></td>
+            <td style="text-align: center" th:utext="${person.id}"></td>
             <td th:utext="${person.date}"></td>
             <td th:utext="${person.description}"></td>
             <td th:utext="${person.groups}"></td>
-            <td></td>
             <td style="text-align: center"><a th:href="@{'/deleteH/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>
     </table>

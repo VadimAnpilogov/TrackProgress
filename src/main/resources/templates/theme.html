@@ -9,21 +9,19 @@
     <table align="center">
         <thead>
         <tr>
-            <th style="width: 5%">#</th>
-            <th style="width: 50%">Описание темы</th>
-            <th style="width: 15%">Edit</th>
-            <th style="width: 15%">Delete</th>
+            <th style="width: 35px">#</th>
+            <th style="width: 300px">Описание темы</th>
+            <th style="width: 35px">Delete</th>
         </tr>
         </thead>
         <tr>
             <td></td>
-            <td><input type="descriptionTheme1" name="descriptionTheme" placeholder="Введите название темы"></td>
+            <td><input style="width: 300px" type="descriptionTheme1" name="descriptionTheme" placeholder="Введите название темы"></td>
             <td><input type="submit" value="Отправить"></td>
         </tr>
         <tr th:each="person : ${theme}">
-            <td th:utext="${person.id}"></td>
+            <td style="text-align: center" th:utext="${person.id}"></td>
             <td th:utext="${person.descriptionTheme}"></td>
-            <td></td>
             <td style="text-align: center"><a th:href="@{'/deleteT/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>
     </table>

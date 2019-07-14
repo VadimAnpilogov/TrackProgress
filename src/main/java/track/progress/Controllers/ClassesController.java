@@ -1,7 +1,9 @@
 package track.progress.Controllers;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import track.progress.Repository.ClassesRepository;
 import track.progress.Entity.classes;
 import track.progress.service.ClassesServices;
+
 
 import java.util.Map;
 
@@ -47,6 +50,14 @@ public class ClassesController {
     @GetMapping("/deleteC/{id}")
     public String deleteClasses(@PathVariable Integer id) {
         service.deleteC(id);
+        return "redirect:/classes";
+    }
+
+
+    @GetMapping("/sort")
+    public String sortClasses(@RequestParam int id) {
+        classesRepository.findAllByOrderByDateAsc();
+
         return "redirect:/classes";
     }
 

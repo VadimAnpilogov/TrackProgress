@@ -7,41 +7,44 @@
 <body>
 
 <!--Содержимое-->
-
-<form method="post" action="addStudents?fio1=fio&group1=groups">
-    <table align="center">
-        <thead>
+<form action="students">
+    <table align="left">
         <tr>
-            <th style="width: 5%">#</th>
-            <th style="width: 50%">FIO</th>
-            <th style="width: 20%">Group</th>
-            <th style="width: 15%">Edit</th>
-            <th style="width: 15%">Delete</th>
-        </tr>
-        </thead>
-        <tr>
-            <td></td>
-            <td><input type="fio1" name="fio" placeholder="Введите ФИО студента"></td>
-            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>
-            <td><input type="submit" value="Добавить" ></td>
-            <td></td>
+            <td> <input type="submit" value="Список всех студентов" style="width: 180px"></td>
         </tr>
 
-        <tbody>
-        <tr th:each="person : ${groups}">
-            <td th:utext="${person.id}"></td>
-            <td th:utext="${person.fio}"></td>
-            <td th:utext="${person.groups}"></td>
-            <td></td>
-            <td style="text-align: center"><a th:href="@{'/deleteG/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
-        </tr>
-        </tbody>
     </table>
+
 </form>
 
-    <table align="center">
+<form method="post" action="addGroups?group1=groups">
+<table align="center">
+    <thead>
+    <tr>
+        <th style="width: 35px">#</th>
+        <th style="width: 100px">Group</th>
+        <th style="width: 70px">Delete</th>
+    </tr>
+    </thead>
+    <tr>
+        <td></td>
+        <td><input style="width: 100px" type="group1" name = "groups" placeholder="Введите группу"></td>
+        <td><input type="submit" value="Добавить" style="width: 70px"></td>
+    </tr>
+    <tr th:each="person : ${groupsL}">
+        <td style="text-align: center" th:utext="${person.id}"></td>
+        <td th:utext="${person.groups}"></td>
+        <td style="text-align: center"><a th:href="@{'/deleteGL/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
+    </tr>
 
-    </table>
+</table>
+</form>
+
+
+
+
+
+
 
 <footer th:replace="footer :: footer"></footer>
 </body>

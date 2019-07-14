@@ -3,19 +3,18 @@ package track.progress.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import track.progress.Entity.groupsL;
 import track.progress.Entity.message;
+import track.progress.Repository.GroupRepository;
 import track.progress.Repository.MessageRepo;
 import track.progress.service.GroupServices;
+
 
 import java.util.Map;
 
 
 @Controller
-//@RestController
 public class GreetingController {
-
-
-
 
     private GroupServices service;
 
@@ -35,12 +34,14 @@ public class GreetingController {
         return "home";
     }
 
-    @GetMapping("groups")
+    @GetMapping("students")
     public String groups (Map<String, Object> model)
     {
         Iterable<message> messages = messageRepo.findAll();
-        model.put("groups", messages);
-        return "groups";
+        model.put("students", messages);
+
+
+        return "students";
     }
 
     @PostMapping("addStudents")
@@ -50,13 +51,13 @@ public class GreetingController {
         messageRepo.save(message1);
 
         Iterable<message> messages = messageRepo.findAll();
-        model.put("groups", messages);
-        return "groups";
+        model.put("students", messages);
+        return "students";
     }
 
     @GetMapping("/deleteG/{id}")
     public String deleteGroups(@PathVariable Integer id) {
         service.deleteG(id);
-        return "redirect:/groups";
+        return "redirect:/students";
     }
 }
