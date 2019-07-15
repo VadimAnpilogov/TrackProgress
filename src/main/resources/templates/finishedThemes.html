@@ -7,7 +7,7 @@
 <body>
 
 <form method="post" action="addFinishThemes?theme1=theme&group1=groups">
-    <table align="center">
+    <table align="left">
         <thead>
         <tr>
             <th style="width: 35px">#</th>
@@ -31,9 +31,23 @@
         </tr>
 
     </table>
+
+    <table align="center" th:fragment="themes">
+        <thead>
+        <tr>
+            <th style="width: 35px">#</th>
+            <th style="width: 300px">Описание темы</th>
+            <th style="width: 300px">Отметка</th>
+        </tr>
+        </thead>
+        <tr th:each="person1 : ${theme}">
+            <td style="text-align: center" th:utext="${person1.id}"></td>
+            <td th:utext="${person1.descriptionTheme}"></td>
+            <td style="text-align: center"><a th:href="@{'/addThemeFinished/{theme}'(theme=${person1.descriptionTheme})}">Пройдена</a></td>
+        </tr>
+    </table>
+
 </form>
-
-
 
 <footer th:replace="footer :: footer"></footer>
 </body>

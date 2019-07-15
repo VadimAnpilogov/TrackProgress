@@ -23,14 +23,18 @@ public class FinishedThemesController {
     @Autowired
     public FinishedThemesRepository finishedThemesRepository;
 
-//    @Autowired
-//    public ThemeRepository themeRepository;
+    @Autowired
+    public ThemeRepository themeRepository;
 
 
     @GetMapping("finishedThemes")
     public String finishedThemes (Map<String, Object> model) {
+
         Iterable<finishedThemes> finishedThemes = finishedThemesRepository.findAll();
         model.put("finishedThemes2", finishedThemes);
+
+        Iterable<theme> theme1 = themeRepository.findAll();
+        model.put("theme", theme1);
         return "finishedThemes";
     }
 
@@ -45,12 +49,29 @@ public class FinishedThemesController {
         return "finishedThemes";
     }
 
-
     @GetMapping("/deleteF/{id}")
     public String deleteF(@PathVariable Integer id) {
         finishedThemesRepository.deleteById(id);
         return "redirect:/finishedThemes";
     }
 
+    @GetMapping("/addgroupFinished/{groups}")
+    public String addgroupFinished (@PathVariable String groups) {
+        Groups1=groups;
+        return "redirect:/finishedThemes";
+    }
+    @GetMapping("/addThemeFinished/{theme}")
+    public String addThemeFinished (@PathVariable String theme, Map<String, Object> model) {
+        Theme1=theme;
+        finishedThemes finishedThemes1 = new finishedThemes(Theme1, Groups1);
+        finishedThemesRepository.save(finishedThemes1);
+
+        Iterable<finishedThemes> finishedThemes2 = finishedThemesRepository.findAll();
+        model.put("finishedThemes2", finishedThemes2);
+
+        Iterable<theme> theme1 = themeRepository.findAll();
+        model.put("theme", theme1);
+        return "redirect:/finishedThemes";
+    }
 
 }
