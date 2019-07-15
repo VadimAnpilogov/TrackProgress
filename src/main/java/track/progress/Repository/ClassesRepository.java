@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ClassesRepository extends CrudRepository<classes, Integer> {
-    List<classes> findAllByOrderByDateAsc();
+    List<classes> findAllByOrderByDateDesc();
 
 }
 

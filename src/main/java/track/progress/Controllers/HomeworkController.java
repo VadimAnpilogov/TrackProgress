@@ -23,18 +23,18 @@ public class HomeworkController {
 
     @GetMapping("homework")
     public String homework (Map<String, Object> model) {
-        Iterable<homework> homework1 = homeworkRepository.findAllByOrderByDateAsc();
+        Iterable<homework> homework1 = homeworkRepository.findAllByOrderByDateDesc();
         model.put("homework", homework1);
         return "homework";
     }
 
     @PostMapping("addHomework")
-    public String addHomework(@RequestParam Date date, @RequestParam String description, @RequestParam String groups, Map<String, Object> model)
+    public String addHomework(@RequestParam String date, @RequestParam String description, @RequestParam String groups, Map<String, Object> model)
     {
         homework homework = new homework(date, description, groups);
         homeworkRepository.save(homework);
 
-        Iterable<homework> homework1 = homeworkRepository.findAllByOrderByDateAsc();
+        Iterable<homework> homework1 = homeworkRepository.findAllByOrderByDateDesc();
         model.put("homework", homework1);
         return "homework";
     }

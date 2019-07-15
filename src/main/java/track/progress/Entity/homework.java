@@ -11,7 +11,7 @@ public class homework {
     private Integer id;
     private String description;
     private String groups;
-    private Date date;
+    private String date;
     public homework () {}
 
     public Integer getId() {
@@ -38,15 +38,15 @@ public class homework {
         this.groups = groups;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public homework(Date date, String description, String groups) {
+    public homework(String date, String description, String groups) {
         this.date = date;
         this.description = description;
         this.groups = groups;

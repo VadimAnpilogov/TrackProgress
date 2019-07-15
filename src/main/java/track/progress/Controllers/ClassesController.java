@@ -24,7 +24,7 @@ public class ClassesController {
 
     @GetMapping("classes")
     public String classes (Map<String, Object> model) {
-        Iterable<classes> classes1 = classesRepository.findAllByOrderByDateAsc();
+        Iterable<classes> classes1 = classesRepository.findAllByOrderByDateDesc();
         model.put("classes", classes1);
         return "classes";
     }
@@ -35,7 +35,7 @@ public class ClassesController {
         classes classes = new classes(date, groups);
         classesRepository.save(classes);
 
-        Iterable<classes> classes1 = classesRepository.findAllByOrderByDateAsc();
+        Iterable<classes> classes1 = classesRepository.findAllByOrderByDateDesc();
         model.put("classes", classes1);
         return "classes";
     }
