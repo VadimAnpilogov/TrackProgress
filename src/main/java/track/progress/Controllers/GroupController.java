@@ -4,27 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import track.progress.Entity.groupsL;
-import track.progress.Entity.message;
 import track.progress.Repository.GroupRepository;
-import track.progress.Repository.MessageRepo;
-import track.progress.service.GroupServices;
-import track.progress.service.GroupsLServices;
 
 import java.util.Map;
 
 
 @Controller
-//@RestController
+
 public class GroupController {
-
-    private GroupsLServices service;
-
-
-    @Autowired
-    public void setNoteService(GroupsLServices service) {
-        this.service = service;
-    }
-
 
     @Autowired
     public GroupRepository groupRepository;
@@ -52,7 +39,7 @@ public class GroupController {
 
     @GetMapping("/deleteGL/{id}")
     public String deleteGroups(@PathVariable Integer id) {
-        service.deleteGL(id);
+        groupRepository.deleteById(id);
         return "redirect:/groups";
     }
 }

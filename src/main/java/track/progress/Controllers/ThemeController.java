@@ -9,22 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import track.progress.Entity.theme;
 import track.progress.Repository.ThemeRepository;
-import track.progress.service.ThemeServices;
+
 
 import java.util.Map;
 
 
 @Controller
 public class ThemeController {
-
-
-    private ThemeServices service;
-
-
-    @Autowired
-    public void setNoteService(ThemeServices service) {
-        this.service = service;
-    }
 
 
     @Autowired
@@ -51,7 +42,7 @@ public class ThemeController {
 
     @GetMapping("/deleteT/{id}")
     public String deleteTheme(@PathVariable Integer id) {
-        service.deleteT(id);
+        themeRepository.deleteById(id);
         return "redirect:/theme";
     }
 

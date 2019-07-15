@@ -1,6 +1,7 @@
 package track.progress.Entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "homework")
@@ -10,7 +11,7 @@ public class homework {
     private Integer id;
     private String description;
     private String groups;
-    private String date;
+    private Date date;
     public homework () {}
 
     public Integer getId() {
@@ -37,15 +38,15 @@ public class homework {
         this.groups = groups;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public homework(String date, String description, String groups) {
+    public homework(Date date, String description, String groups) {
         this.date = date;
         this.description = description;
         this.groups = groups;
