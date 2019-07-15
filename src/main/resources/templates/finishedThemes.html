@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="head :: head"></head>
+<body th:replace="menu :: menu"></body>
+<body>
+
+<form method="post" action="addFinishThemes?theme1=theme&group1=groups">
+    <table align="center">
+        <thead>
+        <tr>
+            <th style="width: 35px">#</th>
+            <th style="width: 80px">Date</th>
+            <th style="width: 80px">Group</th>
+            <th style="width: 35px">Delete</th>
+        </tr>
+        </thead>
+        <tr>
+            <td></td>
+            <td><input type="theme1" name="theme"  placeholder="Введите тему"></td>
+            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>
+            <td><input type="submit" value="Добавить"></td>
+        </tr>
+
+        <tr th:each="person : ${finishedThemes2}">
+            <td style="text-align: center" th:utext="${person.id}"></td>
+            <td th:utext="${person.theme}"></td>
+            <td th:utext="${person.groups}"></td>
+            <td style="text-align: center"><a th:href="@{'/deleteF/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
+        </tr>
+
+    </table>
+</form>
+
+
+
+<footer th:replace="footer :: footer"></footer>
+</body>
+</html>
