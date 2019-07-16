@@ -10,18 +10,18 @@
 
 
 
-<form action="addStudents?fio1=fio">
-    <table align="center">
+<form class="decor" action="addStudents?fio1=fio">
+    <table class="demotable" align="center">
         <thead>
         <tr>
             <th style="width: 35px">#</th>
-            <th style="width: 350px">FIO</th>
-            <th style="width: 100px">Group</th>
+            <th style="width: 350px">ФИО</th>
+            <th style="width: 100px">Группа</th>
             <th style="width: 70px">Delete</th>
         </tr>
         </thead>
         <tr>
-            <td></td>
+<!--            <td></td>-->
             <td><input style="width: 350px" type="fio1" name="fio" placeholder="Введите ФИО студента"></td>
             <td></td>
 <!--            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>-->
@@ -31,7 +31,7 @@
 
         <tbody>
         <tr th:each="person : ${students}">
-            <td style="text-align: center" th:utext="${person.id}"></td>
+<!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.fio}"></td>
             <td th:utext="${person.groups}"></td>
             <td style="text-align: center"><a th:href="@{'/deleteG/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>

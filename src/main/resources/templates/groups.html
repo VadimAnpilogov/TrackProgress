@@ -16,12 +16,16 @@
         <th style="width: 70px">Delete</th>
         <th style="width: 100px">Пройденные темы</th>
         <th style="width: 100px">Студенты</th>
+        <th style="width: 100px">Занятия</th>
+        <th style="width: 100px">Домашнее занятие</th>
     </tr>
     </thead>
     <tr>
 <!--        <td></td>-->
         <td><input style="width: 100px" type="group1" name = "groups" placeholder="Введите группу"></td>
         <td><input type="submit" value="Добавить" style="width: 70px"></td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
     </tr>
@@ -31,6 +35,8 @@
         <td style="text-align: center"><a th:href="@{'/deleteGL/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         <td style="text-align: center"><a th:href="@{'/addgroupFinished/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
         <td style="text-align: center"><a th:href="@{'/FilterGroups/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroupsClasses/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroupsHomeWork/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
     </tr>
 
 </table>

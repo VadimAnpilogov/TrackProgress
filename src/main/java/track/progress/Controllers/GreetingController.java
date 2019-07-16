@@ -16,11 +16,7 @@ public class GreetingController {
     @Autowired
     public MessageRepo messageRepo;
 
-    @GetMapping
-    public String main()
-    {
-        return "home";
-    }
+
 
     @GetMapping("students")
     public String groups (Map<String, Object> model)

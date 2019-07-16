@@ -36,6 +36,16 @@
     </table>
 </form>
 
+<form align="right" method="post" action="HWfilterSearchGroups?groupsP=groups">
+    <input type="groupsP" name="groups" placeholder="Поиск по группе">
+    <td><input type="submit" value="Поиск"></td>
+</form>
+
+<form align="right" method="post" action="HWfilterSearchDate?dateP=date">
+    <input type="dateP" name="date" id="datepicker1" autocomplete="off" placeholder="Поиск по дате">
+    <td><input type="submit" value="Поиск"></td>
+</form>
+
 <footer th:replace="footer :: footer"></footer>
 </body>
 </html>

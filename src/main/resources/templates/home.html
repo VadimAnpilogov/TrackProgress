@@ -7,6 +7,26 @@
 <script th:replace="time :: time"></script>
 <div id="timedisplay" class="time" align="center"></div>
 
+
+<form>
+    <table class="demotable" align="center">
+        <thead>
+        <tr>
+            <th style="width: 35px">#</th>
+            <th style="width: 80px">Дата</th>
+            <th style="width: 80px">Группа</th>
+<!--            <th style="width: 35px">Delete</th>-->
+        </tr>
+        </thead>
+        <tr th:each="person : ${classes}">
+            <!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
+            <td th:utext="${person.date}"></td>
+            <td th:utext="${person.groups}"></td>
+<!--            <td style="text-align: center"><a th:href="@{'/deleteC/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>-->
+        </tr>
+
+    </table>
+</form>
 <footer th:replace="footer :: footer"></footer>
 </body>
 
