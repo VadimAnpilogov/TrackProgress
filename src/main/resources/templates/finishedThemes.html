@@ -6,7 +6,7 @@
 <body th:replace="menu :: menu"></body>
 <body>
 
-<form method="post" action="addFinishThemes?theme1=theme&group1=groups">
+<form method="post" >
     <table align="left">
         <thead>
         <tr>
@@ -16,12 +16,12 @@
             <th style="width: 35px">Delete</th>
         </tr>
         </thead>
-        <tr>
-            <td></td>
-            <td><input type="theme1" name="theme"  placeholder="Введите тему"></td>
-            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>
-            <td><input type="submit" value="Добавить"></td>
-        </tr>
+<!--        <tr>-->
+<!--            <td></td>-->
+<!--            <td><input type="theme1" name="theme"  placeholder="Введите тему"></td>-->
+<!--            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>-->
+<!--            <td><input type="submit" value="Добавить"></td>-->
+<!--        </tr>-->
 
         <tr th:each="person : ${finishedThemes2}">
             <td style="text-align: center" th:utext="${person.id}"></td>

@@ -30,7 +30,7 @@ public class FinishedThemesController {
     @GetMapping("finishedThemes")
     public String finishedThemes (Map<String, Object> model) {
 
-        Iterable<finishedThemes> finishedThemes = finishedThemesRepository.findAll();
+        Iterable<finishedThemes> finishedThemes = finishedThemesRepository.findByGroups(Groups1);
         model.put("finishedThemes2", finishedThemes);
 
         Iterable<theme> theme1 = themeRepository.findAll();
@@ -38,16 +38,16 @@ public class FinishedThemesController {
         return "finishedThemes";
     }
 
-    @PostMapping("addFinishThemes")
-    public String addClasses(@RequestParam String theme, @RequestParam String groups, Map<String, Object> model)
-    {
-        finishedThemes finishedThemes1 = new finishedThemes(theme, groups);
-        finishedThemesRepository.save(finishedThemes1);
-
-        Iterable<finishedThemes> finishedThemes2 = finishedThemesRepository.findAll();
-        model.put("finishedThemes2", finishedThemes2);
-        return "finishedThemes";
-    }
+//    @PostMapping("addFinishThemes")
+//    public String addClasses(@RequestParam String theme, @RequestParam String groups, Map<String, Object> model)
+//    {
+//        finishedThemes finishedThemes1 = new finishedThemes(theme, groups);
+//        finishedThemesRepository.save(finishedThemes1);
+//
+//        Iterable<finishedThemes> finishedThemes2 = finishedThemesRepository.findAll();
+//        model.put("finishedThemes2", finishedThemes2);
+//        return "finishedThemes";
+//    }
 
     @GetMapping("/deleteF/{id}")
     public String deleteF(@PathVariable Integer id) {
@@ -66,7 +66,7 @@ public class FinishedThemesController {
         finishedThemes finishedThemes1 = new finishedThemes(Theme1, Groups1);
         finishedThemesRepository.save(finishedThemes1);
 
-        Iterable<finishedThemes> finishedThemes2 = finishedThemesRepository.findAll();
+        Iterable<finishedThemes> finishedThemes2 = finishedThemesRepository.findByGroups(Groups1);
         model.put("finishedThemes2", finishedThemes2);
 
         Iterable<theme> theme1 = themeRepository.findAll();
