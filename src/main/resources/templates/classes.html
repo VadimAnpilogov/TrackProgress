@@ -6,6 +6,26 @@
 <body th:replace="menu :: menu"></body>
 <body>
 
+<table align="center" style="padding: 10px">
+    <tr>
+        <td>
+            <form align="right" method="post" action="filterSearchGroups?groupsP=groups">
+                <input type="groupsP" name="groups" placeholder="Поиск по группе">
+        <td><input type="submit" value="Поиск"></td>
+        </form>
+        </td>
+        <td>
+            <form align="right" method="post" action="filterSearchDate?dateP=date">
+                <input type="dateP" name="date" id="datepicker1" autocomplete="off" placeholder="Поиск по дате">
+        <td><input type="submit" value="Поиск"></td>
+        </form>
+        </td>
+    </tr>
+</table>
+
+
+
+
 <form method="post" action="addClasses?date1=date&group1=groups">
     <table class="demotable" align="center">
         <thead>
@@ -34,15 +54,7 @@
 </form>
 
 
-<form align="right" method="post" action="filterSearchGroups?groupsP=groups">
-    <input type="groupsP" name="groups" placeholder="Поиск по группе">
-    <td><input type="submit" value="Поиск"></td>
-</form>
 
-<form align="right" method="post" action="filterSearchDate?dateP=date">
-    <input type="dateP" name="date" id="datepicker1" autocomplete="off" placeholder="Поиск по дате">
-    <td><input type="submit" value="Поиск"></td>
-</form>
 
 
 <footer th:replace="footer :: footer"></footer>
