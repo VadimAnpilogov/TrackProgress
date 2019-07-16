@@ -6,7 +6,7 @@
 <body>
 
 <form class="decor" method="post" action="addTheme?descriptionTheme1=descriptionTheme">
-    <table align="center" th:fragment="themes">
+    <table class="demotable" align="center" th:fragment="themes">
         <thead>
         <tr>
             <th style="width: 35px">#</th>
@@ -15,12 +15,12 @@
         </tr>
         </thead>
         <tr>
-            <td></td>
+
             <td><input style="width: 300px" type="descriptionTheme1" name="descriptionTheme" placeholder="Введите название темы"></td>
             <td><input type="submit" value="Отправить"></td>
         </tr>
         <tr th:each="person : ${theme}">
-            <td style="text-align: center" th:utext="${person.id}"></td>
+<!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.descriptionTheme}"></td>
             <td style="text-align: center"><a th:href="@{'/deleteT/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>

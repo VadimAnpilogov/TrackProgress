@@ -8,7 +8,7 @@
 
 <!--Содержимое-->
 <form method="post" action="addGroups?group1=groups">
-<table align="center">
+<table  class="demotable" align="center">
     <thead>
     <tr>
         <th style="width: 35px">#</th>
@@ -19,14 +19,14 @@
     </tr>
     </thead>
     <tr>
-        <td></td>
+<!--        <td></td>-->
         <td><input style="width: 100px" type="group1" name = "groups" placeholder="Введите группу"></td>
         <td><input type="submit" value="Добавить" style="width: 70px"></td>
         <td></td>
         <td></td>
     </tr>
     <tr th:each="person : ${groupsL}">
-        <td style="text-align: center" th:utext="${person.id}"></td>
+<!--        <td style="text-align: center" th:utext="${person.id}"></td>-->
         <td th:utext="${person.groups}"></td>
         <td style="text-align: center"><a th:href="@{'/deleteGL/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         <td style="text-align: center"><a th:href="@{'/addgroupFinished/{groups}'(groups=${person.groups})}">Посмотреть</a></td>

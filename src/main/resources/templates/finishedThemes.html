@@ -7,7 +7,7 @@
 <body>
 
 <form method="post" >
-    <table align="left">
+    <table class="demotable1" align="left">
         <thead>
         <tr>
             <th style="width: 35px">#</th>
@@ -24,7 +24,7 @@
 <!--        </tr>-->
 
         <tr th:each="person : ${finishedThemes2}">
-            <td style="text-align: center" th:utext="${person.id}"></td>
+<!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.theme}"></td>
             <td th:utext="${person.groups}"></td>
             <td style="text-align: center"><a th:href="@{'/deleteF/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
@@ -32,7 +32,7 @@
 
     </table>
 
-    <table align="center" th:fragment="themes">
+    <table class="demotable1" align="center" th:fragment="themes">
         <thead>
         <tr>
             <th style="width: 35px">#</th>
@@ -41,7 +41,7 @@
         </tr>
         </thead>
         <tr th:each="person1 : ${theme}">
-            <td style="text-align: center" th:utext="${person1.id}"></td>
+<!--            <td style="text-align: center" th:utext="${person1.id}"></td>-->
             <td th:utext="${person1.descriptionTheme}"></td>
             <td style="text-align: center"><a th:href="@{'/addThemeFinished/{theme}'(theme=${person1.descriptionTheme})}">Пройдена</a></td>
         </tr>
