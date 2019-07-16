@@ -4,7 +4,7 @@
 <head th:replace="head :: head"></head>
 <body th:replace="menu :: menu"></body>
 <body>
-
+<a href="groups">Посмотреть пройденные темы для каждой группы</a>
 <form class="decor" method="post" action="addTheme?descriptionTheme1=descriptionTheme">
     <table class="demotable" align="center" th:fragment="themes">
         <thead>
@@ -26,6 +26,9 @@
         </tr>
     </table>
 </form>
+
+
+
 <footer th:replace="footer :: footer"></footer>
 </body>
 </html>
