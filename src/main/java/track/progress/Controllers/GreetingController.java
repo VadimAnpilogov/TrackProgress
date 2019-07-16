@@ -11,38 +11,41 @@ import java.util.Map;
 @Controller
 public class GreetingController {
 
-
+    public String Groups1 = "ASC";
 
     @Autowired
     public MessageRepo messageRepo;
 
-    @GetMapping
-    public String main()
-    {
-        return "home";
-    }
+
 
     @GetMapping("students")
     public String groups (Map<String, Object> model)
     {
-        Iterable<message> messages = messageRepo.findAll();
+        Iterable<message> messages = messageRepo.findByGroups(Groups1);
         model.put("students", messages);
-
-
         return "students";
     }
 
-    @PostMapping("addStudents")
-    public String add(@RequestParam String fio, @RequestParam String groups,Map<String, Object> model)
+    @GetMapping("/FilterGroups/{groups}")
+    public String FilterGroups(@PathVariable String groups, Map<String, Object> model) {
+
+        Groups1=groups;
+        Iterable<message> messages = messageRepo.findByGroups(Groups1);
+        model.put("students", messages);
+        return "redirect:/students";
+    }
+
+    @GetMapping("addStudents")
+    public String add(@RequestParam String fio, Map<String, Object> model)
     {
-        message message1 = new message(fio,groups);
+        message message1 = new message(fio,Groups1);
         messageRepo.save(message1);
 
 
 
-        Iterable<message> messages = messageRepo.findAll();
+        Iterable<message> messages = messageRepo.findByGroups(Groups1);
         model.put("students", messages);
-        return "students";
+        return "redirect:/students";
     }
 
     @GetMapping("/deleteG/{id}")

@@ -7,44 +7,40 @@
 <body>
 
 <!--Содержимое-->
-<form action="students">
-    <table align="left">
-        <tr>
-            <td> <input type="submit" value="Список всех студентов" style="width: 180px"></td>
-        </tr>
-
-    </table>
-
-</form>
-
 <form method="post" action="addGroups?group1=groups">
-<table align="center">
+<table  class="demotable" align="center">
     <thead>
     <tr>
         <th style="width: 35px">#</th>
-        <th style="width: 100px">Group</th>
+        <th style="width: 100px">Группы</th>
         <th style="width: 70px">Delete</th>
+        <th style="width: 100px">Пройденные темы</th>
+        <th style="width: 100px">Студенты</th>
+        <th style="width: 100px">Занятия</th>
+        <th style="width: 100px">Домашнее занятие</th>
     </tr>
     </thead>
     <tr>
-        <td></td>
+<!--        <td></td>-->
         <td><input style="width: 100px" type="group1" name = "groups" placeholder="Введите группу"></td>
         <td><input type="submit" value="Добавить" style="width: 70px"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr th:each="person : ${groupsL}">
-        <td style="text-align: center" th:utext="${person.id}"></td>
+<!--        <td style="text-align: center" th:utext="${person.id}"></td>-->
         <td th:utext="${person.groups}"></td>
         <td style="text-align: center"><a th:href="@{'/deleteGL/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
+        <td style="text-align: center"><a th:href="@{'/addgroupFinished/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroups/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroupsClasses/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroupsHomeWork/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
     </tr>
 
 </table>
 </form>
-
-
-
-
-
-
 
 <footer th:replace="footer :: footer"></footer>
 </body>

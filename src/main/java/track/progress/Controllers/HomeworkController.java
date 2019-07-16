@@ -15,8 +15,8 @@ import java.util.Map;
 @Controller
 public class HomeworkController {
 
-
-
+    public String Groups1="asc";
+    public String Date1="asc";
     @Autowired
     public HomeworkRepository homeworkRepository;
 
@@ -26,6 +26,26 @@ public class HomeworkController {
         Iterable<homework> homework1 = homeworkRepository.findAllByOrderByDateDesc();
         model.put("homework", homework1);
         return "homework";
+    }
+    @GetMapping("homeworkG")
+    public String redirHomework (Map<String, Object> model) {
+        Iterable<homework> homework1 = homeworkRepository.findByGroups(Groups1);
+        model.put("homework", homework1);
+        return "homework";
+    }
+    @GetMapping("homeworkD")
+    public String redirHomeworkDate (Map<String, Object> model) {
+        Iterable<homework> homework1 = homeworkRepository.findByDate(Date1);
+        model.put("homework", homework1);
+        return "homework";
+    }
+
+    @GetMapping("FilterGroupsHomeWork/{groups}")
+    public String FilterGroupsHomeWork (@PathVariable String groups, Map<String, Object> model) {
+        Groups1=groups;
+        Iterable<homework> homework1 = homeworkRepository.findByGroups(groups);
+        model.put("homework", homework1);
+        return "redirect:/homeworkG";
     }
 
     @PostMapping("addHomework")
@@ -44,6 +64,21 @@ public class HomeworkController {
         return "redirect:/homework";
     }
 
+
+    @PostMapping("HWfilterSearchGroups")
+    public String HWfilterSearchGroups(@RequestParam String groups, Map<String, Object> model){
+        Groups1=groups;
+        Iterable<homework> homework1 = homeworkRepository.findByGroups(groups);
+        model.put("classhomeworkes", homework1);
+        return "redirect:/homeworkG";
+    }
+    @PostMapping("HWfilterSearchDate")
+    public String HWfilterSearchDate(@RequestParam String date, Map<String, Object> model){
+        Date1=date;
+        Iterable<homework> homework1 = homeworkRepository.findByDate(date);
+        model.put("homework", homework1);
+        return "redirect:/homeworkD";
+    }
 
 
 }

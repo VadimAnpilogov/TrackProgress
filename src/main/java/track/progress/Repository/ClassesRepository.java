@@ -11,7 +11,9 @@ import java.util.List;
 
 @Repository
 public interface ClassesRepository extends CrudRepository<classes, Integer> {
+    List<classes> findByDate(String Date);
     List<classes> findAllByOrderByDateDesc();
+    List<classes> findByGroups(String groups);
 
 }
 

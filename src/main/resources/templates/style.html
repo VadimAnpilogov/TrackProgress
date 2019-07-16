@@ -230,6 +230,7 @@
         }
     }
 
+
     /*--------------------Кнопки футера*/
     button.butt {
         text-align:center;
@@ -266,6 +267,61 @@
     /*--------------------Кнопки футера*/
 
 
+
+    /*нумерация строк###########################################################*/
+
+    /*для таблиц со 2 строки*/
+    .demotable {
+        border-collapse: collapse;
+        counter-reset: schetchik;
+    }
+    .demotable tbody tr:nth-child(n+2) {
+        counter-increment: schetchik;
+    }
+    .demotable td,
+    .demotable tbody tr:before {
+        padding: .1em .5em;
+        border: 1px solid #E7D5C0;
+    }
+    .demotable tbody tr:before {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .demotable tbody tr:before,
+    .demotable b:after {
+        content: counter(schetchik);
+        color: #978777;
+    }
+    .demotable tbody tr:nth-child(-n+1):before {
+        content: "";
+    }
+/*для таблиц с первой строки*/
+    .demotable1 {
+        border-collapse: collapse;
+        counter-reset: schetchik;
+    }
+    .demotable1 tbody tr:nth-child(n+1) {
+        counter-increment: schetchik;
+    }
+    .demotable1 td,
+    .demotable1 tbody tr:before {
+        padding: .1em .5em;
+        border: 1px solid #E7D5C0;
+    }
+    .demotable1 tbody tr:before {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .demotable1 tbody tr:before,
+    .demotable1 b:after {
+        content: counter(schetchik);
+        color: #978777;
+    }
+    .demotable1 tbody tr:nth-child(-n+0):before {
+        content: "";
+    }
+
+    /*нумерация строк###########################################################*/
 
 </style>
 </html>

@@ -7,7 +7,7 @@
 <body>
 
 <form class="decor" method="post" action="addHomework?date1=date&description1=description&groups1=groups">
-    <table align="center">
+    <table class="demotable" align="center">
 
         <thead>
         <tr>
@@ -19,7 +19,7 @@
         </tr>
         </thead>
         <tr>
-            <td></td>
+<!--            <td></td>-->
             <td><input type="date1" name = "date" id="datepicker" autocomplete="off" placeholder="Введите дату"></td>
             <td><input style="width: 300px" type="description1" name="description" placeholder="Введите описание ДЗ"></td>
             <td><input type="groups1" name = "groups" placeholder="Введите группу"></td>
@@ -27,13 +27,23 @@
         </tr>
 
         <tr th:each="person : ${homework}">
-            <td style="text-align: center" th:utext="${person.id}"></td>
+<!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.date}"></td>
             <td th:utext="${person.description}"></td>
             <td th:utext="${person.groups}"></td>
             <td style="text-align: center"><a th:href="@{'/deleteH/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>
     </table>
+</form>
+
+<form align="right" method="post" action="HWfilterSearchGroups?groupsP=groups">
+    <input type="groupsP" name="groups" placeholder="Поиск по группе">
+    <td><input type="submit" value="Поиск"></td>
+</form>
+
+<form align="right" method="post" action="HWfilterSearchDate?dateP=date">
+    <input type="dateP" name="date" id="datepicker1" autocomplete="off" placeholder="Поиск по дате">
+    <td><input type="submit" value="Поиск"></td>
 </form>
 
 <footer th:replace="footer :: footer"></footer>

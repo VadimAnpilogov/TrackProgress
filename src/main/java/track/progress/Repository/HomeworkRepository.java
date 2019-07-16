@@ -9,7 +9,8 @@ import java.util.List;
 
 @Repository
 public interface HomeworkRepository extends CrudRepository<homework, Integer> {
-    //List<homework> findAllByOrderByDateAsc();
     List<homework> findAllByOrderByDateDesc();
+    List<homework> findByGroups(String groups);
+    List<homework> findByDate(String date);
 
 }
