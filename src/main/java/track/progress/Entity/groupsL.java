@@ -12,12 +12,24 @@ public class groupsL {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String groups;
+    private String time;
+
     public groupsL()
     {
 
     }
-    public groupsL(String groups) {
+
+    public groupsL(String groups, String time) {
         this.groups = groups;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public Integer getId() {
