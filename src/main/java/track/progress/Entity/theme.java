@@ -10,11 +10,21 @@ public class theme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String descriptionTheme;
+    private String time;
 
     public theme(){}
 
-    public theme(String descriptionTheme) {
+    public theme(String descriptionTheme, String time) {
         this.descriptionTheme = descriptionTheme;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public Integer getId() {

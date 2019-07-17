@@ -11,19 +11,22 @@ import track.progress.Entity.theme;
 import track.progress.Repository.ThemeRepository;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 
 @Controller
 public class ThemeController {
 
-
+public String time;
     @Autowired
     public ThemeRepository themeRepository;
 
     @GetMapping("theme")
     public String theme (Map<String, Object> model) {
-        Iterable<theme> theme1 = themeRepository.findAll();
+
+        Iterable<theme> theme1 = themeRepository.findAllByOrderByTimeAsc();
         model.put("theme", theme1);
         return "theme";
     }
@@ -31,10 +34,14 @@ public class ThemeController {
     @PostMapping("addTheme")
     public String addTheme(@RequestParam String descriptionTheme, Map<String, Object> model)
     {
-        theme theme = new theme(descriptionTheme);
+        Date dateNow = new Date();
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        time = formatForDateNow.format(dateNow);
+
+        theme theme = new theme(descriptionTheme, time);
         themeRepository.save(theme);
 
-        Iterable<theme> theme1 = themeRepository.findAll();
+        Iterable<theme> theme1 = themeRepository.findAllByOrderByTimeAsc();
         model.put("theme", theme1);
 
         return "theme";
