@@ -151,9 +151,8 @@
     /*--------------------Кнопки футера*/
 
     /*нумерация строк###########################################################*/
-
     /*для таблиц со 2 строки*/
-    .demotable {
+    .demotable, .demotable1 {
         border-collapse: collapse;
         counter-reset: schetchik;
         background-color: var(--color4);
@@ -162,76 +161,67 @@
         counter-increment: schetchik;
     }
     .demotable td,
-    .demotable tbody tr:before {
+    .demotable tbody tr:before,
+    .demotable1 td,
+    .demotable1 tbody tr:before {
         padding: .1em .5em;
         border: 1px solid var(--color3);
     }
-    .demotable tbody tr:before {
+    .demotable tbody tr:before,
+    .demotable1 tbody tr:before{
         display: table-cell;
         vertical-align: middle;
     }
     .demotable tbody tr:before,
-    .demotable b:after {
+    .demotable b:after,
+    .demotable1 tbody tr:before,
+    .demotable1 b:after{
         content: counter(schetchik);
     }
     .demotable tbody tr:nth-child(-n+1):before {
         content: "";
     }
 /*для таблиц с первой строки*/
-    .demotable1 {
-        border-collapse: collapse;
-        counter-reset: schetchik;
-        background-color: var(--color4);
-    }
     .demotable1 tbody tr:nth-child(n+1) {
         counter-increment: schetchik;
-    }
-    .demotable1 td,
-    .demotable1 tbody tr:before {
-        padding: .1em .5em;
-        border: 1px solid var(--color3);
-    }
-    .demotable1 tbody tr:before {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .demotable1 tbody tr:before,
-    .demotable1 b:after {
-        content: counter(schetchik);
     }
     .demotable1 tbody tr:nth-child(-n+0):before {
         content: "";
     }
-
     /*нумерация строк###########################################################*/
 
-    td{
-        background-color: var(--color4);
+
+    .demotable, .demotable1{
+        border:1px solid #CCCCCC;
+        /*width:100%;*/
+        border-radius: 8px;
+        overflow:hidden;
+        margin:0.7em auto;
     }
-    th{
+    tr.bCTable_Header {
         background-color: var(--color3);
-        color: var(--color_light-text);
     }
+
 
 
     :root{
         --color1: #25254b;
         --color2: #4e628c;
-        --color3: #528abf;
-        --color4: #618cc0;
+        --color3: #46638f;
+        --color4: #7ea9e2;
         --color5: #aac4f3;
         --color_background: rgb(246, 245, 235);
         --color_light-text: #ebebeb;
         --color_dark-text: #191919;
 
         /*Светлая тема ВК*/
-        --color_background_content: #ffffff;
-        --color_text: #000000;
-        --color_infoicons: #c2c5cb;
-        --color_icons: #a8abb1;
-        --color_signatures: #8e9197;
-        --color_inscriptions: #767779;
-        --color_accents: #4d80cb;
+        /*--color_background_content: #ffffff;*/
+        /*--color_text: #000000;*/
+        /*--color_infoicons: #c2c5cb;*/
+        /*--color_icons: #a8abb1;*/
+        /*--color_signatures: #8e9197;*/
+        /*--color_inscriptions: #767779;*/
+        /*--color_accents: #4d80cb;*/
 
     }
 
