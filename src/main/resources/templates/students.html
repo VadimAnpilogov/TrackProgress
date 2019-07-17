@@ -8,12 +8,10 @@
 
 <!--Содержимое-->
 
-
-
-<form class="decor" action="addStudents?fio1=fio">
+<form method="post" action="addStudents?fio1=fio">
     <table class="demotable" align="center">
         <thead>
-        <tr class="bCTable_Header">
+        <tr class="bCTable_Header tDevice_Propertyes_tr1">
             <th style="width: 35px">#</th>
             <th style="width: 350px">ФИО</th>
             <th style="width: 100px">Группа</th>
@@ -21,22 +19,18 @@
         </tr>
         </thead>
         <tr>
-<!--            <td></td>-->
-            <td><input style="width: 350px" type="fio1" name="fio" placeholder="Введите ФИО студента"></td>
-            <td></td>
-<!--            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>-->
-            <td><input type="submit" value="Добавить" style="width: 70px"></td>
-
+            <!--            <td></td>-->
+            <td><input type="fio1" name="fio" placeholder="Введите ФИО студента"></td>
+            <td><input type="submit" value="Добавить"></td>
         </tr>
 
-        <tbody>
-        <tr th:each="person : ${students}">
-<!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
+        <tr class="tDevice_Propertyes_tr1" th:each="person : ${students}">
+            <!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.fio}"></td>
             <td th:utext="${person.groups}"></td>
             <td style="text-align: center"><a th:href="@{'/deleteG/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
         </tr>
-        </tbody>
+
     </table>
 </form>
 
