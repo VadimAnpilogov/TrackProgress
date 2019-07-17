@@ -4,20 +4,20 @@
 <head th:replace="head :: head"></head>
 <body th:replace="menu :: menu"></body>
 <body>
-<a href="groups">Посмотреть пройденные темы для каждой группы</a>
+<form action="groups"><div align="center"><button class="simplebut" type="submit">Посмотреть пройденные темы для каждой группы</button></div></form>
 <form class="decor" method="post" action="addTheme?descriptionTheme1=descriptionTheme">
     <table class="demotable" align="center" th:fragment="themes">
         <thead>
         <tr class="bCTable_Header">
             <th style="width: 35px">#</th>
             <th style="width: 300px">Описание темы</th>
-            <th style="width: 35px">Delete</th>
+            <th style="width: 35px">Edit</th>
         </tr>
         </thead>
         <tr>
 
-            <td><input style="width: 300px" type="descriptionTheme1" name="descriptionTheme" placeholder="Введите название темы"></td>
-            <td><input type="submit" value="Отправить"></td>
+            <td><input class="tableform" type="descriptionTheme1" name="descriptionTheme" placeholder="Введите название темы"></td>
+            <td align="center"><button type="submit" class="tablebut">Добавить</button></td>
         </tr>
         <tr th:each="person : ${theme}">
 <!--            <td style="text-align: center" th:utext="${person.id}"></td>-->

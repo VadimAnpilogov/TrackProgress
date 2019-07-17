@@ -11,13 +11,13 @@
         <td>
             <form align="right" method="post" action="filterSearchGroups?groupsP=groups">
                 <input type="groupsP" name="groups" placeholder="Поиск по группе">
-        <td><input type="submit" value="Поиск"></td>
+        <td><input class="search" type="submit" value=""></td>
         </form>
         </td>
         <td>
             <form align="right" method="post" action="filterSearchDate?dateP=date">
                 <input type="dateP" name="date" id="datepicker1" autocomplete="off" placeholder="Поиск по дате">
-        <td><input type="submit" value="Поиск"></td>
+        <td><input class="search" type="submit" value=""></td>
         </form>
         </td>
     </tr>
@@ -33,14 +33,14 @@
             <th style="width: 35px">#</th>
             <th style="width: 80px">Дата</th>
             <th style="width: 80px">Группа</th>
-            <th style="width: 35px">Delete</th>
+            <th style="width: 35px">Edit</th>
         </tr>
         </thead>
         <tr>
 <!--            <td></td>-->
-            <td><input type="date1" name="date" id="datepicker" autocomplete="off" placeholder="Введите дату занятия"></td>
-            <td><input type="group1" name = "groups" placeholder="Введите группу"></td>
-            <td><input type="submit" value="Добавить"></td>
+            <td><input class="tableform" type="date1" name="date" id="datepicker" autocomplete="off" placeholder="Введите дату занятия"></td>
+            <td><input class="tableform" type="group1" name = "groups" placeholder="Введите группу"></td>
+            <td align="center"><button type="submit" class="tablebut">Добавить</button></td>
         </tr>
 
         <tr class="tDevice_Propertyes_tr1" th:each="person : ${classes}">

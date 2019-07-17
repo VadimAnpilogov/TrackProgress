@@ -15,13 +15,13 @@
             <th style="width: 35px">#</th>
             <th style="width: 350px">ФИО</th>
             <th style="width: 100px">Группа</th>
-            <th style="width: 70px">Delete</th>
+            <th style="width: 70px">Edit</th>
         </tr>
         </thead>
         <tr>
             <!--            <td></td>-->
-            <td><input type="fio1" name="fio" placeholder="Введите ФИО студента"></td>
-            <td><input type="submit" value="Добавить"></td>
+            <td><input class="tableform" type="fio1" name="fio" placeholder="Введите ФИО студента"></td>
+            <td align="center"><button class="tablebut" type="submit">Добавить</button></td>
         </tr>
 
         <tr class="tDevice_Propertyes_tr1" th:each="person : ${students}">

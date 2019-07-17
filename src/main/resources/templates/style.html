@@ -117,39 +117,6 @@
         text-align: center;
     }
 
-    /*--------------------Кнопки футера*/
-    button.butt {
-        text-align:center;
-        font-size:13px;
-        text-decoration: none;
-        font-weight: 700;
-        padding: 3px 6px;
-        background: var(--color5);
-        display:block;
-        width:80px;
-        margin: 20px auto;
-        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.1));
-        border-radius: 3px;
-        color: var(--color_dark-text);
-        text-shadow: 0 1px 1px rgba(255, 255, 255, 0);
-    }
-
-    button.butt:hover, button.butt.hover {
-        background: var(--color5);
-    }
-    button.butt:active, button.butt.active {
-        background: var(--color4);
-        box-shadow: inset 0 0 2px var(--color1), inset 0 2px 5px var(--color2), 0 1px var(--color3);
-    }
-    .footertable {
-        background-color: rgba(0, 0, 0, 0);
-        border: rgba(0, 0, 0, 0);
-        color: rgba(0, 0, 0, 0);
-        position: relative;
-        top: -20px;
-    }
-    /*--------------------Кнопки футера*/
-
     /*нумерация строк###########################################################*/
     /*для таблиц со 2 строки*/
     .demotable, .demotable1 {
@@ -202,6 +169,61 @@
         background-color: var(--color3);
     }
 
+    /*Кнопки*/
+    button {
+        background-color: #fff;
+        border: 0;
+        outline: 0;
+        font-family: monospace;
+        transition: all 0.3s;
+        cursor: pointer;
+        border-radius: 5px;
+        border-bottom: 4px solid #d9d9d9;
+        height: 10px;
+        width: 80px;
+        font-size: 13px;
+    }
+    button:active {
+        transform: scale(0.97);
+    }
+    button.footerbut{
+        padding: 10px 12px 20px;
+        width: auto;
+        position: relative;
+        bottom: 4px;
+    }
+    button.tablebut{
+        height: inherit;
+        width: inherit;
+    }
+    button.simplebut{
+        height: auto;
+        width: auto;
+        padding: 4px 10px;
+        border-radius: 3px;
+        box-shadow: 0 0 0 2px #878787;
+        border-bottom: 0 solid #d9d9d9;
+        font-size: 14px;
+    }
+    input.search{
+        background: url(https://img.icons8.com/color/344/search.png) no-repeat scroll 0 2px;
+        background-size: 30px;
+        position: relative;
+        height: 35px;
+        width: 25px;
+        padding-left:30px;
+        border: none;
+    }
+
+    /*Кнопки*/
+
+    .tableform{
+        border-radius: 4px;
+        padding: 2px 4px 3px 4px;
+        margin: 1px 0px 0px -3px;
+        border-width: 0;
+        width: 100%;
+    }
 
 
     :root{
