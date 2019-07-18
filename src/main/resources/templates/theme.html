@@ -4,7 +4,7 @@
 <head th:replace="head :: head"></head>
 <body th:replace="menu :: menu"></body>
 <body>
-<form action="groups"><div align="center"><button class="simplebut" type="submit">Посмотреть пройденные темы для каждой группы</button></div></form>
+<form action="groups"><div align="center"><button class="simplebut" type="submit">Выбрать группу для просмотра тем</button></div></form>
 <form class="decor" method="post" action="addTheme?descriptionTheme1=descriptionTheme">
     <table class="demotable" align="center" th:fragment="themes">
         <thead>
@@ -22,7 +22,7 @@
         <tr th:each="person : ${theme}">
 <!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.descriptionTheme}"></td>
-            <td style="text-align: center"><a th:href="@{'/deleteT/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
+            <td style="text-align: center"><a th:href="@{'/deleteT/{id}'(id=${person.id})}"><i class="icon_delete"></i></a></td>
         </tr>
     </table>
 </form>

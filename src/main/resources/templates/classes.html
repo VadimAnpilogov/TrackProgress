@@ -11,13 +11,13 @@
         <td>
             <form align="right" method="post" action="filterSearchGroups?groupsP=groups">
                 <input type="groupsP" name="groups" placeholder="Поиск по группе">
-        <td><input class="search" type="submit" value=""></td>
+        <td><input class="icon_search" type="submit" value=""></td>
         </form>
         </td>
         <td>
             <form align="right" method="post" action="filterSearchDate?dateP=date">
                 <input type="dateP" name="date" id="datepicker1" autocomplete="off" placeholder="Поиск по дате">
-        <td><input class="search" type="submit" value=""></td>
+        <td><input class="icon_search" type="submit" value=""></td>
         </form>
         </td>
     </tr>
@@ -47,7 +47,7 @@
 <!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.date}"></td>
             <td th:utext="${person.groups}"></td>
-            <td style="text-align: center"><a th:href="@{'/deleteC/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
+            <td style="text-align: center"><a th:href="@{'/deleteC/{id}'(id=${person.id})}"><i class="icon_delete"></i></a></td>
         </tr>
 
     </table>

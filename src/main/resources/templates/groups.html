@@ -16,7 +16,7 @@
         <th style="width: 70px">Edit</th>
         <th style="width: 100px">Студенты</th>
         <th style="width: 100px">Занятия</th>
-        <th style="width: 100px">Домашнее занятие</th>
+        <th style="width: 100px">Домашнее задание</th>
         <th style="width: 100px">Пройденные темы</th>
     </tr>
     </thead>
@@ -32,11 +32,11 @@
     <tr th:each="person : ${groupsL}">
 <!--        <td style="text-align: center" th:utext="${person.id}"></td>-->
         <td th:utext="${person.groups}"></td>
-        <td style="text-align: center"><a th:href="@{'/deleteGL/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
-        <td style="text-align: center"><a th:href="@{'/FilterGroups/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
-        <td style="text-align: center"><a th:href="@{'/FilterGroupsClasses/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
-        <td style="text-align: center"><a th:href="@{'/FilterGroupsHomeWork/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
-        <td style="text-align: center"><a th:href="@{'/addgroupFinished/{groups}'(groups=${person.groups})}">Посмотреть</a></td>
+        <td style="text-align: center"><a th:href="@{'/deleteGL/{id}'(id=${person.id})}"><i class="icon_delete"></i></a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroups/{groups}'(groups=${person.groups})}"><i class="icon_students"></i></a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroupsClasses/{groups}'(groups=${person.groups})}"><i class="icon_classes"></i></a></td>
+        <td style="text-align: center"><a th:href="@{'/FilterGroupsHomeWork/{groups}'(groups=${person.groups})}"><i class="icon_homework"></i></a></td>
+        <td style="text-align: center"><a th:href="@{'/addgroupFinished/{groups}'(groups=${person.groups})}"><i class="icon_finishedThemes"></i></a></td>
     </tr>
 
 </table>

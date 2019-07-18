@@ -28,7 +28,7 @@
             <!--            <td style="text-align: center" th:utext="${person.id}"></td>-->
             <td th:utext="${person.fio}"></td>
             <td th:utext="${person.groups}"></td>
-            <td style="text-align: center"><a th:href="@{'/deleteG/{id}'(id=${person.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>
+            <td style="text-align: center"><a th:href="@{'/deleteG/{id}'(id=${person.id})}"><i class="icon_delete"></i></a></td>
         </tr>
 
     </table>
