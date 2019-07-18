@@ -12,7 +12,7 @@
         position: fixed; /* Фиксированное положение */
         left: 0;
         bottom: 0; /* Левый нижний угол */
-        padding: 10px; /* Поля вокруг текста */
+        padding: 20px 10px 0 10px; /* Поля вокруг текста */
         background: var(--color3); /* Цвет фона */
         color: var(--color1); /* Цвет текста */
         width: 100%; /* Ширина слоя */
@@ -207,7 +207,7 @@
         font-size: 14px;
     }
     input.icon_search{
-        background: url(https://img.icons8.com/color/344/search.png) no-repeat scroll 0 2px;
+        background: url(https://img.icons8.com/ios-glyphs/30/000000/search.png) no-repeat scroll 0 2px;
         background-size: 30px;
         position: relative;
         height: 35px;
@@ -215,6 +215,9 @@
         padding-left:30px;
         border: none;
         outline: none;
+    }
+    input.icon_search:active{
+        transform: scale(0.88);
     }
     .icon_students{
         background: url(https://img.icons8.com/ios-glyphs/480/000000/group.png) no-repeat scroll 0 0;
@@ -264,8 +267,30 @@
         border: none;
         outline: none;
     }
-
-
+    i.icon_students:active,
+    i.icon_classes:active,
+    i.icon_homework:active,
+    i.icon_finishedThemes:active,
+    i.icon_delete:active,
+    i.icon_themeFinished:active{
+        background-size: 90%;
+    }
+    .icon_help{
+        background: url(https://img.icons8.com/ios-glyphs/480/000000/info.png) no-repeat scroll 0 0;
+        background-size: 30px;
+        position: relative;
+        padding: 5px 15px;
+        border: none;
+        outline: none;
+    }
+    .icon_github{
+        background: url(https://img.icons8.com/ios-glyphs/480/000000/github.png) no-repeat scroll 0 0;
+        background-size: 30px;
+        position: relative;
+        padding: 5px 15px;
+        border: none;
+        outline: none;
+    }
     /*Кнопки*/
 
     .tableform{
@@ -275,6 +300,111 @@
         border-width: 0;
         width: 100%;
     }
+    .simpleform{
+        border-radius: 14px;
+        padding: 5px 10px;
+        outline: none;
+        border: 2px outset var(--color2);
+    }
+
+    /*---------------------------Переключатель ночного режима*/
+    .box_3{
+        background: #19232b;
+    }
+    .toggle_switch{
+        width: 100px;
+        height: 45px;
+        position: relative;
+    }
+    input[type="checkbox"].switch_3{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        outline: 0;
+        z-index: 1;
+    }
+    svg.checkbox .outer-ring{
+        stroke-dasharray: 375;
+        stroke-dashoffset: 375;
+        -webkit-animation: resetRing .35s ease-in-out forwards;
+        animation: resetRing .35s ease-in-out forwards;
+    }
+    input[type="checkbox"].switch_3:checked + svg.checkbox .outer-ring{
+        -webkit-animation: animateRing .35s ease-in-out forwards;
+        animation: animateRing .35s ease-in-out forwards;
+    }
+    input[type="checkbox"].switch_3:checked + svg.checkbox .is_checked{
+        opacity: 1;
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+    }
+    input[type="checkbox"].switch_3:checked + svg.checkbox .is_unchecked{
+        opacity: 0;
+        -webkit-transform: translateX(-200%) rotate(180deg);
+        transform: translateX(-200%) rotate(180deg);
+    }
+    svg.checkbox{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    svg.checkbox .is_checked{
+        opacity: 0;
+        fill: yellow;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: translateX(200%) rotate(45deg);
+        transform: translateX(200%) rotate(45deg);
+        -webkit-transition: all .35s;
+        transition: all .35s;
+    }
+    svg.checkbox .is_unchecked{
+        opacity: 1;
+        fill: #fff;
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        -webkit-transition: all .35s;
+        transition: all .35s;
+    }
+    @-webkit-keyframes animateRing{
+        to{
+            stroke-dashoffset: 0;
+            stroke: #b0aa28;
+        }
+    }
+    @keyframes animateRing{
+        to{
+            stroke-dashoffset: 0;
+            stroke: #b0aa28;
+        }
+    }
+    @-webkit-keyframes resetRing{
+        to{
+            stroke-dashoffset: 0;
+            stroke: #233043;
+        }
+    }
+    @keyframes resetRing{
+        to{
+            stroke-dashoffset: 0;
+            stroke: #233043;
+        }
+    }
+    /*---------------------------*/
 
 
     :root{
@@ -283,21 +413,10 @@
         --color3: #46638f;
         --color4: #7ea9e2;
         --color5: #aac4f3;
-        --color_background: rgb(246, 245, 235);
+        --color_background: rgb(245, 244, 243);
         --color_light-text: #ebebeb;
         --color_dark-text: #191919;
-
-        /*Светлая тема ВК*/
-        /*--color_background_content: #ffffff;*/
-        /*--color_text: #000000;*/
-        /*--color_infoicons: #c2c5cb;*/
-        /*--color_icons: #a8abb1;*/
-        /*--color_signatures: #8e9197;*/
-        /*--color_inscriptions: #767779;*/
-        /*--color_accents: #4d80cb;*/
-
     }
-
 
 </style>
 </html>

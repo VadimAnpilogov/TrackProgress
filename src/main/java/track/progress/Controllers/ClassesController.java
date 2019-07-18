@@ -26,8 +26,13 @@ public class ClassesController {
     public ClassesRepository classesRepository;
 
     @GetMapping
-    public String main()
-    {
+    public String main(Map<String, Object> model) {
+
+        Date dateNow = new Date();
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("MM/dd/yyyy");
+
+        Iterable<classes> classes1 = classesRepository.findByDate(formatForDateNow.format(dateNow));
+        model.put("classes", classes1);
         return "home";
     }
 
