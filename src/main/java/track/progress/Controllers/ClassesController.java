@@ -76,6 +76,10 @@ public class ClassesController {
     @PostMapping("addClasses")
     public String addClasses(@RequestParam String date, @RequestParam String groups, Map<String, Object> model)
     {
+        if((date.isEmpty())||(groups.isEmpty()))
+        {
+            return "404";
+        }
         classes classes = new classes(date, groups);
         classesRepository.save(classes);
 
@@ -91,6 +95,10 @@ public class ClassesController {
 
     @PostMapping("filterSearchGroups")
     public String filterSearchGroups(@RequestParam String groups, Map<String, Object> model){
+        if(groups.isEmpty())
+        {
+            return "404";
+        }
         Groups1=groups;
         Iterable<classes> classes1 = classesRepository.findByGroups(groups);
         model.put("classes", classes1);
@@ -98,6 +106,10 @@ public class ClassesController {
     }
     @PostMapping("filterSearchDate")
     public String filterSearchDate(@RequestParam String date, Map<String, Object> model){
+        if(date.isEmpty())
+        {
+            return "404";
+        }
         Date1=date;
         Iterable<classes> classes1 = classesRepository.findByDate(date);
         model.put("classes", classes1);

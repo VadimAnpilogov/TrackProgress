@@ -36,7 +36,10 @@ public String time;
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         time = formatForDateNow.format(dateNow);
 
-
+        if(groups.isEmpty())
+        {
+            return "404";
+        }
         groupsL groupsL1 = new groupsL(groups, time);
         groupRepository.save(groupsL1);
 

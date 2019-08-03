@@ -17,7 +17,6 @@ public class GreetingController {
     public MessageRepo messageRepo;
 
 
-
     @GetMapping("students")
     public String groups (Map<String, Object> model)
     {
@@ -35,13 +34,15 @@ public class GreetingController {
         return "redirect:/students";
     }
 
-    @GetMapping("addStudents")
+    @PostMapping("addStudents")
     public String add(@RequestParam String fio, Map<String, Object> model)
     {
+        if(fio.isEmpty())
+        {
+            return "404";
+        }
         message message1 = new message(fio,Groups1);
         messageRepo.save(message1);
-
-
 
         Iterable<message> messages = messageRepo.findByGroups(Groups1);
         model.put("students", messages);

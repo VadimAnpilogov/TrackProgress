@@ -38,6 +38,12 @@ public String time;
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         time = formatForDateNow.format(dateNow);
 
+        if(descriptionTheme.isEmpty())
+        {
+            return "404";
+        }
+
+
         theme theme = new theme(descriptionTheme, time);
         themeRepository.save(theme);
 

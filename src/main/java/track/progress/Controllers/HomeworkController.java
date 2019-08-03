@@ -42,6 +42,7 @@ public class HomeworkController {
 
     @GetMapping("FilterGroupsHomeWork/{groups}")
     public String FilterGroupsHomeWork (@PathVariable String groups, Map<String, Object> model) {
+
         Groups1=groups;
         Iterable<homework> homework1 = homeworkRepository.findByGroups(groups);
         model.put("homework", homework1);
@@ -51,6 +52,10 @@ public class HomeworkController {
     @PostMapping("addHomework")
     public String addHomework(@RequestParam String date, @RequestParam String description, @RequestParam String groups, Map<String, Object> model)
     {
+        if((description.isEmpty())||(date.isEmpty())||(groups.isEmpty()))
+        {
+            return "404";
+        }
         homework homework = new homework(date, description, groups);
         homeworkRepository.save(homework);
 
@@ -67,6 +72,10 @@ public class HomeworkController {
 
     @PostMapping("HWfilterSearchGroups")
     public String HWfilterSearchGroups(@RequestParam String groups, Map<String, Object> model){
+        if(groups.isEmpty())
+        {
+            return "404";
+        }
         Groups1=groups;
         Iterable<homework> homework1 = homeworkRepository.findByGroups(groups);
         model.put("classhomeworkes", homework1);
@@ -74,6 +83,10 @@ public class HomeworkController {
     }
     @PostMapping("HWfilterSearchDate")
     public String HWfilterSearchDate(@RequestParam String date, Map<String, Object> model){
+        if(date.isEmpty())
+        {
+            return "404";
+        }
         Date1=date;
         Iterable<homework> homework1 = homeworkRepository.findByDate(date);
         model.put("homework", homework1);
